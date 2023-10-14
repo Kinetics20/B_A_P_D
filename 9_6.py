@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def count_pln_eur(x , y):
     return x * y
 
