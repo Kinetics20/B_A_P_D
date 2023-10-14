@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 
+# sth
 
 shop_shelf = ['Brush' ,'Soft toy' ,'Banna' ,'orange' ,'Apple']
 
