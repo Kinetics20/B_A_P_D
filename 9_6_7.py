@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def add(x , y ):
     return x + y
 def substraction(x ,y):
