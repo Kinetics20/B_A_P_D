@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 #!/usr/bin/python3
-=======
->>>>>>> aa6a68e26549040403c7e8507dc933706c55d893
 def add(x ,y):
     return x + y
 def substraction(x ,y):
@@ -19,8 +16,6 @@ print("2 - substraction")
 print("3 - multiplication")
 print("4 - division")
 print(" ")
-
-
 
 choice = float(input("enter specific number of maths operations 1/2/3/4 : "))
 print(" ")
