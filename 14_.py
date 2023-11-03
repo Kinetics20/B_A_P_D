@@ -36,5 +36,17 @@
 
 a = range(0, 10)
 b = list(a)
-print(b, end=" ")
+# print(b, end=" ")
 
+# from random import shuffle
+#
+# shuffle(b)
+# print(b[:5])
+
+def my_sum(x, y):
+    z = x +y
+    return z
+num_1 =  50
+num_2 = 100
+num_sum = my_sum(num_1, num_2)
+print(f"Sum of numbers {num_1} and {num_2} is {num_sum}")
