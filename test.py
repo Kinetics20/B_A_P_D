@@ -8,3 +8,11 @@ for n in my_list:
         print(f"value of my_list is float :  {n}")
     if type(n) is int:
         print(f"value of my_list is integer :  {n}")
+
+i = 0
+while i < len(my_list):
+    print(f"elements_of_my_list : {my_list[i]}")
+    i += 1
+
+for i in my_list:
+    print(f"elements_of_my_list_loop_for : {i}")
