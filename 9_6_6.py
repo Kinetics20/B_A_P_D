@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 #!/usr/bin/python3
+=======
+>>>>>>> aa6a68e26549040403c7e8507dc933706c55d893
 def add(x ,y):
     return x + y
 def substraction(x ,y):
