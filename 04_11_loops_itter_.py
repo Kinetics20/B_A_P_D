@@ -6,7 +6,7 @@ heroes = ["Dziewczynka_z_zapalkami",
           "Czerwony_Kapturek"]
 for character in heroes:
     print(character)
-i=0
-while i<len(heroes):
+i = 0
+while i < len(heroes):
     print(heroes[i])
     i += 1
