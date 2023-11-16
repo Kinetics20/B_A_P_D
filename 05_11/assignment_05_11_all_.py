@@ -80,3 +80,19 @@ def format_date(day, month, year):
 print(format_date(12, 4, 2008))
 print(format_date(12, 50, 2008))
 print(format_date(12, 50, -2008))
+
+
+def censor(any_str):
+    new_list = []
+    forbid_list = ['Java', 'C#', 'Ruby', 'PHP']
+    words = any_str.split()
+    for _ in words:
+        if _ in forbid_list:
+            new_list.append('****')
+        else:
+            new_list.append(_)
+    return " ".join(new_list)
+
+
+my_str = 'I like Java but I prefer python and sometimes I like Ruby'
+print(censor(my_str))

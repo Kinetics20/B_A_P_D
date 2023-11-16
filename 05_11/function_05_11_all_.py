@@ -328,3 +328,40 @@ def create_list_from_dict(any_dict):
 
 
 print(create_list_from_dict(my_dict_10))
+
+
+# temp_key = list(any_dict.keys())
+# temp_key = list(any_dict)
+# temp_value = list(any_dict.values())
+
+def create_list_from_dict_2(any_dict):
+    temp_key = list(any_dict)
+    temp_values = list(any_dict.values())
+    return temp_key, temp_values
+
+
+print(create_list_from_dict_2(my_dict_10))
+
+
+def create_new_list(any_list):
+    new_list = []
+    if "seem" in any_list:
+        new_list.append("pies")
+    if "always" in any_list:
+        new_list.append("always")
+    if "what" in any_list:
+        new_list.append("what")
+    return new_list[::-1]
+
+
+print(create_new_list(new_list_4))
+
+new_list_d_1 = ['Things', 'are', 'not', 'always', 'what', 'they', 'seem']
+new_list_d_2 = [3, 90, 5, 6, 8, 20, 60]
+
+
+def create_dict_from_two_list(any_list_1, any_list_2):
+    return dict(zip(any_list_1[:3], any_list_2[:3]))
+
+
+print(create_dict_from_two_list(new_list_d_1, new_list_d_2))
