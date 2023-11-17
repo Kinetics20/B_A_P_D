@@ -82,6 +82,8 @@ print(format_date(12, 50, 2008))
 print(format_date(12, 50, -2008))
 
 
+# 05
+
 def censor(any_str):
     new_list = []
     forbid_list = ['Java', 'C#', 'Ruby', 'PHP']
@@ -96,3 +98,34 @@ def censor(any_str):
 
 my_str = 'I like Java but I prefer python and sometimes I like Ruby'
 print(censor(my_str))
+
+
+# 04
+
+def find_boundaries_2(any_list):
+    if not any_list:
+        return
+    new_list = [value for value in any_list if isinstance(value, (int, float))]
+
+    return min(new_list), max(new_list)
+
+
+m_list = [1, 2, 3.14, 3, 42]
+m_list_2 = []
+m_list_3 = [-1, 2, 3.14, 3, 80, 'Home', 'Theatre', 'Oracle']
+
+print(find_boundaries_2(m_list))
+print(find_boundaries_2(m_list_2))
+print(find_boundaries_2(m_list_3))
+
+# 06
+
+def check_palindrome_2(chain_str):
+    temp = chain_str.split()
+    for index in temp:
+        if index == index[::-1]:
+            return True
+    return False
+
+
+print(check_palindrome_2('ma kota ala'))
