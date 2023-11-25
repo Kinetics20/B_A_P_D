@@ -1,7 +1,7 @@
 from random import shuffle
 
 
-def lotto():
+def lotto_():
     liczby = list(range(1, 49 + 1))
     shuffle(liczby)
     # draft_numbers = ", ".join([str(liczba) for liczba in liczby[:6]])
@@ -10,26 +10,9 @@ def lotto():
     return sorted(draft_numbers)
 
 
-# print(lotto())
+# print(lotto_())
 
-# def lotto_2():
-#     while True:
-#         num_1 = int(input('Choose a number: '))
-#         num_2 = int(input('Choose a number: '))
-#         num_3 = int(input('Choose a number: '))
-#         num_4 = int(input('Choose a number: '))
-#         num_5 = int(input('Choose a number: '))
-#         num_6 = int(input('Choose a number: '))
-#         if not num_1 in range(1, 50) or not num_2 in range(1, 50) or not num_3 in range(1, 50) or not num_4 in range(1,
-#                                                                                                                      50) or not num_5 in range(
-#                 1, 50) or not num_6 in range(1, 50):
-#             print('some number you entered from out of range 1-49 , try again')
-#             continue
-#         if num_1 != num_2 != num_3 != num_4 != num_5 != num_6:
-#             entered_numbers = [num_1, num_2, num_3, num_4, num_5, num_6]
-#             nl = sorted(entered_numbers)
-#             print(nl)
-#             break
+# LOTTO_simulator
 
 def get_num():
     while True:
@@ -43,19 +26,49 @@ def get_num():
 
 
 def get_nums():
-    draft_numbers = []
-    while len(draft_numbers) < 6:
+    score = []
+    while len(score) < 6:
         number = get_num()
-        if number not in draft_numbers and 0 < number <= 49:
-            draft_numbers.append(number)
+        if number not in score and 0 < number <= 49:
+            score.append(number)
 
-    return draft_numbers
+    return score
 
 
 # print(get_nums())
 
-def sorted_draft_numbers(numbers):
-    new_l = [str(number) for number in sorted(numbers)]
-    print(", ".join(new_l))
+def print_numbers(numbers):
+    # new_l = [str(number) for number in sorted(numbers)]
+    # print(", ".join(new_l))
+    print(', '.join(str(number) for number in sorted(numbers)))
 
-# sorted_draft_numbers(draft_numbers)
+
+# print_numbers([1, 2, 3, 4, 7, 5])
+
+def drawing_numbers():
+    numbers = list(range(1, 50))
+    shuffle(numbers)
+    return numbers[:6]
+
+
+# print(drawing_numbers())
+
+def lotto():
+    user_numbers = get_nums()
+    print('Yor numbers: ')
+    print_numbers(user_numbers)
+
+    random_numbers = drawing_numbers()
+    print('Lotto numbers: ')
+    print_numbers(random_numbers)
+
+    hits = 0
+    for number in user_numbers:
+        if number in random_numbers:
+            hits += 1
+
+    print(f"You hit {hits} {'number' if hits == 1 else 'numbers'}!")
+
+
+if __name__ == '__main__':
+    lotto()
