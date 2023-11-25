@@ -7,7 +7,10 @@ def roll_the_dice(dice_code):
     for dice in possible_dices:
         if dice in dice_code:
             try:
-                multiply, modifier = dice_code.split(dice)
+                # result = dice_code.split(dice)
+                # multiply = result[0]
+                # modifier = result[1]
+                (multiply, modifier) = dice_code.split(dice)
             except ValueError:
                 return 'Wrong Input'
             dice_value = int(dice[1:])
