@@ -53,5 +53,46 @@ def roll(dices, dice_type=6, modifier=0):
     return sum(randint(1, dice_type) for _ in range(dices)) + modifier
 
 
-if __name__ == '__main__':
-    print(roll(3, 8, -2))
+# if __name__ == '__main__':
+#     print(roll(3, 8, -2))
+
+
+def count_score_2(any_str):
+    new_list = [int(point) for point in any_str if point.isdigit()]
+    return '3' if new_list[0] > new_list[1] else ('0' if new_list[0] < new_list[1] else '1')
+
+
+# print(count_score_2('1:3'))
+# print(count_score_2('4:3'))
+# print(count_score_2('3:3'))
+
+
+def count_score_3(any_list):
+    new_list = [int(point) for item in any_list for point in item if point.isdigit()]
+    return new_list
+
+
+# print(count_score_3(['1:0', '2:0', '3:0']))
+
+def count_sth_(any_list):
+    new_list = []
+    for result in any_list:
+        a, b = map(int, result.split(':'))
+        if a > b:
+            new_list.append(3)
+        elif a < b:
+            new_list.append(0)
+        else:
+            new_list.append(1)
+    return sum(new_list), new_list
+    # return a, b
+
+
+# print(count_sth_(['1:0', '2:0', '3:0']))
+
+
+def create_list_str_to_list_int(any_list):
+    return list(map(int, any_list))
+
+
+print(create_list_str_to_list_int(['1', '2', '3', '4']))
