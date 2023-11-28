@@ -365,3 +365,45 @@ def create_dict_from_two_list(any_list_1, any_list_2):
 
 
 print(create_dict_from_two_list(new_list_d_1, new_list_d_2))
+
+
+def create_dict_from_two_str(any_str_1, any_str_2):
+    new_list_1 = [word for word in any_str_1.split()]
+    # new_list_2 = [int(word) for word in any_str_2.replace(' ', '')]
+    new_list_2 = list(map(int, any_str_2.replace(' ', '')))
+    # return new_list_1, new_list_2
+    return dict(zip(new_list_2, new_list_1))
+
+
+print(create_dict_from_two_str(('domu nie ma tam'), ('123 4')))
+
+m_dict_ = {
+    'name': 'John Doe',
+    'age': 25,
+    'city': 'Anytown',
+    'is_student': False,
+    'domu': 1,
+    'grin house effect': 71,
+    'John': 61,
+}
+
+
+def create_list_from_val_dict(any_dict):
+    return [str(word) for word in any_dict.values()][::-1]  # if isinstance(word, int)]
+
+
+print(create_list_from_val_dict(m_dict_))
+
+i_list = [5, 2, 8, 1, 9, 3, 7]
+s_list = ['apple', 'banana', 'orange', 'grape', 'kiwi']
+f_list = [3.14, 2.718, 1.618, 0.707, 2.0, 4.2]
+
+
+def create_one_list(a, b, c):
+    # return list(zip(a, b, c))
+    # return a + b + c
+    # return dict(zip(a, b))
+    return [(x, y) for x, y in zip(a, b)]
+
+
+print(create_one_list(i_list, s_list, f_list))
