@@ -96,3 +96,22 @@ def create_list_str_to_list_int(any_list):
 
 
 print(create_list_str_to_list_int(['1', '2', '3', '4']))
+
+
+def findNeedle(haystack):
+    i_of_needle = haystack.index('needle')
+    if 'needle' in haystack:
+        # i_of_needle = haystack.index('needle')
+        return f'found the needle at position {i_of_needle}'
+
+
+needle_list = ['needle', 'haystack', 'another', 'finding', 'no', 'here']
+
+print(findNeedle(needle_list))
+
+
+def find_needle_index(needle_list):
+    return needle_list.index('needle') if 'needle' in needle_list else "Needle not found in the list."
+
+
+print(find_needle_index(needle_list))
