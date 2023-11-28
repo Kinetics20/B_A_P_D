@@ -115,3 +115,52 @@ def find_needle_index(needle_list):
 
 
 print(find_needle_index(needle_list))
+
+
+def uni_total(s):
+    return sum(ord(character) for character in s)
+
+
+print(uni_total('ala ma kota'))
+
+
+def extra(any_list):
+    new_list = []
+    for unit in any_list:
+        new_list.append(unit)
+    new_list.append(len(any_list))
+    return new_list
+
+
+def extra_2(any_list):
+    return any_list + [len(any_list)]
+
+
+print(extra_2([1, 2]))
+print(extra_2([]))
+
+
+def count_age(age):
+    if age > 14:
+        min_ = int((age / 2) + 7)
+        max_ = int((age - 7) * 2)
+    else:
+        min_ = int(age - 0.10 * age)
+        max_ = int(age + 0.10 * age)
+    return f"{min_}-{max_}"
+
+
+def count_age_2(age):
+    return f"{int((age / 2) + 7)}-{int((age - 7) * 2)}" if age > 14 else f"{int(age - 0.10 * age)}-{int(age + 0.10 * age)}"
+
+
+print(count_age(27))
+print(count_age(5))
+print(count_age(17))
+
+
+def feast(beast, dish):
+    return True if beast[0] == dish[0] and beast[-1] == dish[-1] else False
+
+
+print(feast('ala ma kota', 'az ma kota'))
