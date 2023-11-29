@@ -204,3 +204,35 @@ def c_short(any_str):
 
 
 print(c_short('I known some GIRLS who made this kites'))
+
+
+def count_dist(a, b):
+    x_1, y_1 = a
+    x_2, y_2 = b
+    return ((x_2 - x_1) ** 2 + (y_2 - y_1) ** 2) ** 0.5
+
+
+print(count_dist((3, 3), (3, 3)))
+
+
+def distance_between_points(a, b):
+    return ((b.x - a.x) ** 2 + (b.y - a.y) ** 2) ** 0.5
+
+
+def make_negative(number):
+    return -number if number > 0 else (0 if 0 else number)
+
+
+print(make_negative(5))
+print(make_negative(-2))
+print(make_negative(0))
+
+
+def is_uppercase(inp):
+    # return True if not inp.isupper else False
+    # return any(letter.isupper() for letter in inp) and not inp.isupper()
+    return all(letter.isupper() for letter in inp)
+
+
+print(is_uppercase("hello I AM DONALD"))
+print(is_uppercase("HELLO I AM DONALD"))
