@@ -197,3 +197,10 @@ def merge_lists(li1, li2):
 
 
 print(merge_lists(l1, l2))
+
+
+def c_short(any_str):
+    return ''.join([word[0] for word in any_str.split()]).swapcase()
+
+
+print(c_short('I known some GIRLS who made this kites'))
