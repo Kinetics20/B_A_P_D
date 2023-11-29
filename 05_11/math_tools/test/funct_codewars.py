@@ -164,3 +164,36 @@ def feast(beast, dish):
 
 
 print(feast('ala ma kota', 'az ma kota'))
+
+
+def to_alt_case(any_str):
+    if any(l.islower() for l in any_str) and any(l.isupper() for l in any_str):
+        return any_str.swapcase()
+    if any(l.islower() for l in any_str):
+        return any_str.upper()
+    if any(l.isupper() for l in any_str):
+        return any_str.lower()
+
+
+print(to_alt_case('HIGH mates'))
+print(to_alt_case('only mates'))
+print(to_alt_case('HIGH MOUNTAINS'))
+print(to_alt_case('SchOOl HiGh'))
+print(to_alt_case('S45c9hOOl H123h'))
+
+
+def create_two_list_in_one_without_d(any_list1, any_list2):
+    return sorted([x + y for x, y in zip(any_list1, any_list2)])
+
+
+l1 = [1, 3, 5, 6, 7]
+l2 = [2, 3, 6, 7]
+
+print(create_two_list_in_one_without_d(l1, l2))
+
+
+def merge_lists(li1, li2):
+    return sorted(list(set(li1 + li2)))
+
+
+print(merge_lists(l1, l2))
