@@ -20,6 +20,10 @@ class Circle:
     def from_diameter(cls, d):
         return cls(d / 2)
 
+    @staticmethod
+    def area_to_radius(area):
+        return sqrt(area / pi)
+
     def area(self):
         return pi * self.r ** 2
 
