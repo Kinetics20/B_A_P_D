@@ -10,7 +10,7 @@ class Price:
         self.value = round(self.value, 2)
 
     @classmethod
-    def count_pln_from_usd(cls, amount):
+    def from_usd(cls, amount):
         if not isinstance(amount, (int, float)):
             raise ValueError('Amount must be a number (int or float')
 
@@ -18,7 +18,7 @@ class Price:
         return cls(pln_amount)
 
     @classmethod
-    def count_pln_from_eur(cls, amount):
+    def from_eur(cls, amount):
         pln_amount = amount * cls.eur_to_pln
         return cls(pln_amount)
 
@@ -29,9 +29,9 @@ class Price:
         return str(self)
 
 
-some_price = Price.count_pln_from_usd(200)
+some_price = Price.from_usd(200)
 print(some_price)
-some_other_price = Price.count_pln_from_eur(95)
+some_other_price = Price.from_eur(95)
 print(some_other_price)
 # some_price_2 = Price.count_pln_from_usd('200')
 # print(some_price_2)
