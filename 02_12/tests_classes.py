@@ -262,3 +262,74 @@ class Above3ProductsCheapestFreeCart(Cart):
         cheapest_product_name = cheapest_product[1]
         products_copy[0] = (0, cheapest_product_name)
         return products_copy
+
+
+# decorator @property
+
+class Circle:
+
+    def __init__(self, radius):
+        self._radius = radius
+        self.area = math.pi * radius ** 2
+        self.circumference = 2 * math.pi * radius
+
+    def get_radius(self):
+        return self._radius
+
+    @property
+    def radius(self):
+        return self.get_radius()
+
+    @radius.setter
+    def radius(self, new_radius):
+        self._radius = new_radius
+        self.area = math.pi * new_radius ** 2
+        self.circumference = 2 * math.pi * new_radius
+
+
+class Square:
+    def __init__(self, side):
+        self.set_side(side)
+
+    def get_side(self):
+        return self._side
+
+    def get_perimeter(self):
+        return self._perimeter
+
+    def get_area(self):
+        return self._area
+
+    def get_diagonal(self):
+        return self._diagonal
+
+    def set_side(self, new_side):
+        self._side = new_side
+        self._perimeter = new_side * 4
+        self._area = new_side ** 2
+        self._diagonal = (new_side ** 2 + new_side ** 2) ** 0.5
+
+    def set_perimeter(self, new_perimeter):
+        self.set_side(new_perimeter / 4)
+        # self._perimeter = new_perimeter
+        # self._side = new_perimeter / 4
+        # self._diagonal = (self._side ** 2 + self._side ** 2) ** 0.5
+        # self._area = self._side ** 2
+
+    def set_diagonal(self, new_diagonal):
+        self.set_side(((new_diagonal ** 2) / 2) ** 0.5)
+        # self._diagonal = new_diagonal
+        # self._side = ((new_diagonal ** 2) / 2) ** 0.5
+        # self._area = self._side ** 2
+        # self._perimeter = self._side * 4
+
+    def set_area(self, new_area):
+        self.set_side(new_area ** 0.5)
+        # self._area = new_area
+        # self._side = new_area ** 0.5
+        # self._diagonal = (self._side ** 2 + self._side ** 2) ** 0.5
+        # self._perimeter = self._side * 4
+
+
+test = Square(2)
+print(test.set_area(9))
