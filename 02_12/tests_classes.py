@@ -1,4 +1,7 @@
 # 01
+import math
+
+
 class User:
     def __init__(self, ):
         self.history = []
@@ -65,6 +68,7 @@ class Shape:
     def describe(self):
         # return str(self)
         return self.__str__()
+
     # self.__str__() to jest to samo co str(self)
     def distance(self, shape):
         return ((self.x - shape.x) ** 2 + (self.y - shape.y) ** 2) ** 0.5
@@ -142,3 +146,119 @@ class Employee:
 worker_1 = Employee(254, 'John', 'Smith')
 print(worker_1.info_employee())
 worker_1.set_salary(250)
+
+
+# Abstraction 02
+
+class SequenceOfNumbers:
+    def __init__(self, start, stop, step):
+        self.start = start
+        self.stop = stop
+        self.step = step
+
+    def __len__(self):
+        return math.ceil((self.stop - self.start) / self.step)
+
+    def __getitem__(self, index):
+        if index >= len(self):
+            raise IndexError('Index too big')
+        if index < 0:
+            raise IndexError('Index must be higher than zero')
+        return self.start + index * self.step
+
+
+def middle_elements(list_of_list):
+    output = []
+    for inner_list in list_of_list:
+        length = len(inner_list)
+        if length == 0:
+            continue
+        middle_index = length // 2
+        output.append(inner_list[middle_index])
+    return output
+
+
+# Abstraction 04
+
+class SingleChoiceQuestion:
+    def __init__(self, question, answers):
+        self.question = question
+        self.answers = answers
+
+    def ask(self):
+        print(self.question)
+        valid_answers = []
+        for i, answer in enumerate(self.answers):
+            answer_letter = chr(i + 97)
+            valid_answers.append(answer_letter)
+            print(f'{answer_letter}) {answer}')
+        while True:
+            answer = input('Answer :')
+            if answer in valid_answers:
+                print()
+                return answer
+            else:
+                print('Invalid answer , try again')
+
+
+class Questionnaire:
+    def __init__(self, tittle):
+        self.tittle = tittle
+        self.questions = []
+
+    def add_question(self, question):
+        self.questions.append(question)
+
+    def run(self):
+        print(self.tittle)
+        print()
+        answers = {}
+        for i, question in enumerate(self.questions):
+            answers[i] = question.ask()
+        print('Thank you')
+        return answers
+
+
+questionnaire = Questionnaire('Ankieta dotycząca zadowolenia z wyboru laptopa')
+q1 = SingleChoiceQuestion('Matryca', ['mniej niż 15 cali', 'od 15 do 17 cali', 'więcej niż 17 cali'])
+q2 = SingleChoiceQuestion('Rodzaj ekranu', ['matowy', 'błyszczący'])
+q3 = SingleChoiceQuestion('Czy polecisz go znajomemu?',
+                          ['zdecydowanie tak', 'raczej tak', 'nie mam zdania', 'raczej nie',
+                           'zdecydowanie nie'])
+questionnaire.add_question(q1)
+questionnaire.add_question(q2)
+questionnaire.add_question(q3)
+answers = questionnaire.run()
+print(answers)
+
+
+# Inheritance Cart 01
+
+class Cart:
+    def __init__(self):
+        self.products = []
+
+    def add(self, price, name):
+        self.products.append((price, name))
+
+    def summary(self):
+        return self.products
+
+
+class Discount20PercentCart(Cart):
+
+    def summery(self):
+        return [(price * 0.8, name) for price, name in self.products]
+
+
+class Above3ProductsCheapestFreeCart(Cart):
+    def summery(self):
+        if len(self.products) <= 3:
+            return self.products
+            # products_copy = self.products.copy()
+
+        products_copy = sorted(self.products)
+        cheapest_product = products_copy[0]
+        cheapest_product_name = cheapest_product[1]
+        products_copy[0] = (0, cheapest_product_name)
+        return products_copy
