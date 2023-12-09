@@ -52,5 +52,6 @@ class PlanDay:
                 meal_kcal += ingredient_kcal
 
                 print(
-                    f'- {amount}g {ingredient.name} ({ingredient_protein:.2f}g protein, {ingredient_carbohydrates:.2f}g carbohydrates {ingredient_fats:.2f}g fats, {ingredient_kcal:.1f} kcal)')
+                    f'- {amount}g {ingredient.name} ({ingredient_protein:.2f}g protein,'
+                f'{ingredient_carbohydrates:.2f}g carbohydrates {ingredient_fats:.2f}g fats, {ingredient_kcal:.1f} kcal)')
             print(f'Total: {total_protein:.2f}g protein, {total_carbohydrates:.2f}g carbohydrates, {total_fats:.2f}g fats, {total_kcal:.0f} kcal')
