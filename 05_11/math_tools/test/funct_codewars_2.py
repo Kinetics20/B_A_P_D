@@ -87,3 +87,10 @@ def abbrev_name(name):
 
 
 print(abbrev_name('Sam Harris'))
+
+
+def descending_order(num):
+    return int(''.join(sorted(str(num), reverse=True)))
+
+
+print(descending_order(42145))
