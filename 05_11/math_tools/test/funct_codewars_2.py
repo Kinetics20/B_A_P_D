@@ -94,3 +94,91 @@ def descending_order(num):
 
 
 print(descending_order(42145))
+
+
+def DNA_strand(dna):
+    new_l = []
+    for letter in dna:
+        if letter == 'A':
+            new_l.append('T')
+        elif letter == 'T':
+            new_l.append('A')
+        elif letter == 'C':
+            new_l.append('G')
+        elif letter == 'G':
+            new_l.append('C')
+
+    return ''.join(new_l)
+
+
+def DNA_strand_1(dna):
+    # return ''.join(['T' if letter == 'A' else 'A' if letter == 'T' else 'G' if letter == 'C' else 'C' for letter in dna])
+    return ''.join(
+        ['T' if letter == 'A' else 'A' if letter == 'T' else 'G' if letter == 'C' else 'G' for letter in dna])
+
+
+# print(DNA_strand("AAAA"))
+# print(DNA_strand("ATTGC"))
+# print(DNA_strand_1("ATTGC"))
+# print(DNA_strand("GTAT"))
+
+def basic_op_2(operator, value1, value2):
+    if operator == '+':
+        return value1 + value2
+    elif operator == '-':
+        return value1 - value2
+    elif operator == '*':
+        return value1 * value2
+    elif operator == '/':
+        return value1 / value2
+    else:
+        raise ValueError("Nieznany operator")
+
+
+def basic_op(operator, value1, value2):
+    return (
+        value1 + value2 if operator == '+' else
+        value1 - value2 if operator == '-' else
+        value1 * value2 if operator == '*' else
+        value1 / value2 if operator == '/' else None
+    )
+
+
+def basic_op_3(operator, value1, value2):
+    return eval(f'{value1} {operator} {value2}')
+
+
+print(basic_op_3('-', 5, 7))
+
+
+def contains_all_alphabet_letters(s):
+    alphabet_set = set("abcdefghijklmnopqrstuvwxyz")
+    s_set = set(s.lower())  # Zakładam, że wielkość liter nie ma znaczenia
+
+    return all(letter in s_set for letter in alphabet_set)
+
+
+def is_pangram(s):
+    return True if all(letter in set(s.lower()) for letter in set("abcdefghijklmnopqrstuvwxyz")) else False
+
+
+# print(is_pangram("The quick brown fox jumps over the lazy dog"))
+
+def has_duplicate_letters_1(s):
+    for letter in s:
+        if s.count(letter) > 1:
+            return True
+    return False
+
+
+def has_duplicate_letters(string):
+    return all(string.lower().count(letter) <= 1 for letter in string)
+
+def is_isogram(string):
+    return len(set(string.lower())) == len(string)
+
+
+print(has_duplicate_letters("Dermatoglyphics"))
+print(has_duplicate_letters("moose"))
+print(has_duplicate_letters("aba"))
+print(has_duplicate_letters(""))
