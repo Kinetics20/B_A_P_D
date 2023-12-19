@@ -182,3 +182,12 @@ print(has_duplicate_letters("Dermatoglyphics"))
 print(has_duplicate_letters("moose"))
 print(has_duplicate_letters("aba"))
 print(has_duplicate_letters(""))
+
+
+def disemvowel(string_):
+    # vowels = "AEIOUaeiou"
+
+    return ''.join(char for char in string_ if char not in "AEIOUaeiou")
+
+print(disemvowel("This website is for losers LOL!"))
+

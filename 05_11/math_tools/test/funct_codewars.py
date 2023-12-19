@@ -9,6 +9,8 @@ def add_length(str_):
 # print(add_length('My home was in the distance six miles from my work'))
 
 
+
+
 def is_digit(any_value):
     return True if isinstance(any_value, (int, float)) else False
 
