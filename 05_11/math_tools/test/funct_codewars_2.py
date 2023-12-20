@@ -174,6 +174,7 @@ def has_duplicate_letters_1(s):
 def has_duplicate_letters(string):
     return all(string.lower().count(letter) <= 1 for letter in string)
 
+
 def is_isogram(string):
     return len(set(string.lower())) == len(string)
 
@@ -189,5 +190,23 @@ def disemvowel(string_):
 
     return ''.join(char for char in string_ if char not in "AEIOUaeiou")
 
+
 print(disemvowel("This website is for losers LOL!"))
+
+
+def some_f(anystr):
+    return ' '.join([word[::3] for word in anystr.split()])
+
+
+print(some_f("Ala ma kota a kot ma ale123"))
+
+
+def some_f_1(anyint):
+    return int(str(anyint)[1:-1])
+
+
+print(some_f_1(12398765455))
+
+
+
 
