@@ -208,5 +208,33 @@ def some_f_1(anyint):
 print(some_f_1(12398765455))
 
 
+def count_by(x, n):
+    new_l = []
+    for i in range(x, x * n + 1, x):
+        new_l.append(i)
+    return new_l
 
 
+print(count_by(2, 5))
+
+
+def count_by_2(x, n):
+    return [x for x in range(x, x * n + 1, x)]
+
+
+print(count_by_2(2, 5))
+
+
+def get_sum(a, b):
+    return sum([num for num in range(a, b + 1)])
+
+
+print(get_sum(-1, 2))
+
+
+def get_sum(a, b):
+    return sum(range(min(a, b), max(a, b) + 1))
+
+
+def better_than_average(class_points, your_points):
+    return True if len(class_points)/sum(class_points) < your_points else False
