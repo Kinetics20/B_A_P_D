@@ -237,4 +237,44 @@ def get_sum(a, b):
 
 
 def better_than_average(class_points, your_points):
-    return True if len(class_points)/sum(class_points) < your_points else False
+    return True if len(class_points) / sum(class_points) < your_points else False
+
+
+def square_sum(numbers):
+    return sum([num ** 2 for num in numbers])
+
+
+print(square_sum([0, 3, 4, 5]))
+
+
+def find_it(seq):
+    return [num for num in seq if seq.count(num) % 2][0]
+
+
+print(find_it([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]))
+print(find_it([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]))
+
+
+def sum_two_smallest_numbers(numbers):
+    sorted_list = sorted(numbers)
+    return sorted_list[0] + sorted_list[1]
+
+
+print(sum_two_smallest_numbers([5, 8, 12, 18, 22]))
+
+
+def maps(a):
+    # return list(set([num * 2 for num in a]))
+    return [num * 2 for num in set(a)]
+
+
+print(maps([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]))
+
+
+def lovefunc(flower1, flower2):
+    return (flower1 % 2 == 1 and flower2 % 2 == 0) or (flower1 % 2 == 0 and flower2 % 2 == 1)
+
+
+print(lovefunc(2, 2))
+print(lovefunc(0, 2))
+print(lovefunc(168, 328))
