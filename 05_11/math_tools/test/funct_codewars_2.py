@@ -278,3 +278,36 @@ def lovefunc(flower1, flower2):
 print(lovefunc(2, 2))
 print(lovefunc(0, 2))
 print(lovefunc(168, 328))
+
+
+def build_tower(n):
+    tower = []
+    for i in range(n):
+        spaces = ' ' * (n - i - 1)
+        stars = '*' * (2 * i + 1)
+        tower.append(spaces + stars + spaces)
+
+    return tower
+
+
+def bulid_tower_1(n):
+    return [' ' * (n - i - 1) + '*' * (2 * i + 1) + ' ' * (n - i - 1) for i in range(n)]
+
+
+print(bulid_tower_1(3))
+
+
+def series_sum(n):
+    if n == 0:
+        return "0.00"
+
+    total = 0.0
+    denominator = 1
+
+    for _ in range(n):
+        total += 1 / denominator
+        denominator += 3
+
+    return "{:.2f}".format(total)
+
+print(series_sum(1))
