@@ -310,4 +310,13 @@ def series_sum(n):
 
     return "{:.2f}".format(total)
 
+
 print(series_sum(1))
+
+
+def open_or_senior(data):
+    return ["Senior" if i >= 55 and k > 7 else "Open" for i, k in data]
+
+
+def digitize(n):
+    return [int(i) for i in str(n)][::-1]
