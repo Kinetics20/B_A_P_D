@@ -320,3 +320,17 @@ def open_or_senior(data):
 
 def digitize(n):
     return [int(i) for i in str(n)][::-1]
+
+
+def sum_mix(arr):
+    return sum(int(i) for i in arr)
+
+
+# print(sum_mix([9, 3, '7', '3']))
+
+
+def hero(bullets, dragons):
+    return dragons * 2 <= bullets
+
+
+# print(hero(100, 40))
