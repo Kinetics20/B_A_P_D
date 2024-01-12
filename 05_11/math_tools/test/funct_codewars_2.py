@@ -322,6 +322,26 @@ def digitize(n):
     return [int(i) for i in str(n)][::-1]
 
 
+def leo(oscar):
+    if oscar == 88:
+        return "Leo finally won the oscar! Leo is happy"
+    elif oscar == 86:
+        return "Not even for Wolf of wallstreet?!"
+    elif not (oscar == 88 or oscar == 86) and oscar < 88:
+        return "When will you give Leo an Oscar?"
+    elif oscar > 88:
+        return "Leo got one already!"
+
+
+# print(leo(100))
+
+def pipe_fix(nums):
+    return [num for num in range(nums[0], nums[-1] + 1)]
+
+
+print(pipe_fix([1, 2, 3, 4, 5, 9]))
+
+
 def sum_mix(arr):
     return sum(int(i) for i in arr)
 
@@ -331,6 +351,5 @@ def sum_mix(arr):
 
 def hero(bullets, dragons):
     return dragons * 2 <= bullets
-
 
 # print(hero(100, 40))
