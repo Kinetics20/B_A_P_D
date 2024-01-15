@@ -358,3 +358,7 @@ def hero(bullets, dragons):
 
 def cannons_ready(gunners):
   return "Fire!" if all(response == 'aye' for response in gunners.values()) else "Shiver me timbers!"
+
+def shorten_to_date(long_date):
+    return " ".join(long_date.split(", ")[:-1])
+
