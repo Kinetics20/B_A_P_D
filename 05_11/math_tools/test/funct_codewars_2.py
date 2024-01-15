@@ -342,6 +342,8 @@ def pipe_fix(nums):
 print(pipe_fix([1, 2, 3, 4, 5, 9]))
 
 
+
+
 def sum_mix(arr):
     return sum(int(i) for i in arr)
 
@@ -353,3 +355,6 @@ def hero(bullets, dragons):
     return dragons * 2 <= bullets
 
 # print(hero(100, 40))
+
+def cannons_ready(gunners):
+  return "Fire!" if all(response == 'aye' for response in gunners.values()) else "Shiver me timbers!"
