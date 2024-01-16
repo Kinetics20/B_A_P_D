@@ -342,8 +342,6 @@ def pipe_fix(nums):
 print(pipe_fix([1, 2, 3, 4, 5, 9]))
 
 
-
-
 def sum_mix(arr):
     return sum(int(i) for i in arr)
 
@@ -354,11 +352,25 @@ def sum_mix(arr):
 def hero(bullets, dragons):
     return dragons * 2 <= bullets
 
+
 # print(hero(100, 40))
 
 def cannons_ready(gunners):
-  return "Fire!" if all(response == 'aye' for response in gunners.values()) else "Shiver me timbers!"
+    return "Fire!" if all(response == 'aye' for response in gunners.values()) else "Shiver me timbers!"
+
 
 def shorten_to_date(long_date):
     return " ".join(long_date.split(", ")[:-1])
 
+
+def correct(s):
+    change_s = {'0': 'O', '1': 'I', '5': 'S'}
+    return ''.join(change_s.get(char, char) for char in s)
+
+
+def correct_1(string):
+    return string.replace('1', 'I').replace('0', 'O').replace('5', 'S')
+
+def reverse(st):
+    # Your Code Here
+    return ' '.join(st.split()[::-1])
