@@ -552,3 +552,35 @@ def array_madness(a, b):
 
 
 print(array_madness([61], [5, 18, 26, 17, 19, 14, 28, 13, 27]))
+
+
+def sum_array(arr):
+    # return sum(list(set(sorted(arr)))[1:-1])
+    return sum(sorted(arr)[1:-1])
+
+
+print(sum_array([6, 0, 1, 10, 10]))
+
+
+def sum_array_1(arr):
+    return sum(sorted(arr)[1:-1]) if len(arr) > 2 else 0
+
+
+print(sum_array_1([3, 5]))
+print(sum_array_1([5]))
+print(sum_array_1([]))
+
+def rps(p1, p2):
+    beats = {'rock': 'scissors', 'scissors': 'paper', 'paper': 'rock'}
+    if beats[p1] == p2:
+        return "Player 1 won!"
+    if beats[p2] == p1:
+        return "Player 2 won!"
+    return "Draw!"
+
+def rps_1(p1, p2):
+    hand = {'rock':0, 'paper':1, 'scissors':2}
+    results = ['Draw!', 'Player 1 won!', 'Player 2 won!']
+    return results[hand[p1] - hand[p2]]
+
+
