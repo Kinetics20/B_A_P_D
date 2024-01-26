@@ -570,6 +570,7 @@ print(sum_array_1([3, 5]))
 print(sum_array_1([5]))
 print(sum_array_1([]))
 
+
 def rps(p1, p2):
     beats = {'rock': 'scissors', 'scissors': 'paper', 'paper': 'rock'}
     if beats[p1] == p2:
@@ -578,9 +579,25 @@ def rps(p1, p2):
         return "Player 2 won!"
     return "Draw!"
 
+
 def rps_1(p1, p2):
-    hand = {'rock':0, 'paper':1, 'scissors':2}
+    hand = {'rock': 0, 'paper': 1, 'scissors': 2}
     results = ['Draw!', 'Player 1 won!', 'Player 2 won!']
     return results[hand[p1] - hand[p2]]
 
 
+def count_sheeps(sheep):
+    # TODO May the force be with you
+    return str(sheep).count('True')
+
+
+def eliminate_sth_in_list(any_list):
+    return [item for item in any_list if item is not bool].count(5)
+
+
+print(eliminate_sth_in_list([True, True, True, False,
+                             True, True, 5, True,
+                             True, 2, True, False,
+                             True, False, False, True,
+                             True, 5, True, True,
+                             False, False, True, True]))
