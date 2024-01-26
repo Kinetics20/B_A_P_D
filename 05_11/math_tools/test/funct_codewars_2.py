@@ -601,3 +601,5 @@ print(eliminate_sth_in_list([True, True, True, False,
                              True, False, False, True,
                              True, 5, True, True,
                              False, False, True, True]))
+
+
