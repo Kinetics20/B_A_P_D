@@ -602,7 +602,25 @@ print(eliminate_sth_in_list([True, True, True, False,
                              True, 5, True, True,
                              False, False, True, True]))
 
+
 def summation(num):
     return sum(item for item in range(1, num + 1))
 
 
+def number(bus_stops):
+    sum_index_0 = 0
+    sum_index_1 = 0
+    for element in bus_stops:
+        sum_index_0 += element[0]
+        sum_index_1 += element[1]
+    return sum_index_0 - sum_index_1
+
+
+def number_1(bus_stops):
+    sum_index_0 = sum(element[0] for element in bus_stops)
+    sum_index_1 = sum(element[1] for element in bus_stops)
+    return sum_index_0 - sum_index_1
+
+
+def number_2(bus_stops):
+    return sum([stop[0] - stop[1] for stop in bus_stops])
