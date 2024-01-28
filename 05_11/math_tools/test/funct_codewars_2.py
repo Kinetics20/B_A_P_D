@@ -624,3 +624,10 @@ def number_1(bus_stops):
 
 def number_2(bus_stops):
     return sum([stop[0] - stop[1] for stop in bus_stops])
+
+
+def number_3(bus_stops):
+    sum = 0
+    for i in bus_stops:
+        sum += i[0] - i[1]
+    return sum
