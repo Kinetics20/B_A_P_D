@@ -602,4 +602,7 @@ print(eliminate_sth_in_list([True, True, True, False,
                              True, 5, True, True,
                              False, False, True, True]))
 
+def summation(num):
+    return sum(item for item in range(1, num + 1))
+
 
