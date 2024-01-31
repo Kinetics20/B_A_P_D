@@ -631,3 +631,22 @@ def number_3(bus_stops):
     for i in bus_stops:
         sum += i[0] - i[1]
     return sum
+
+
+from functools import reduce
+
+
+def grow(arr):
+    return reduce(lambda x, y: x * y, arr)
+
+
+def grow_1(arr):
+    product = 1
+    for i in arr:
+        product *= i
+    return product
+
+def powers_of_two(n):
+    return [2 ** num for num in range(0, n + 1)]
+
+
