@@ -681,3 +681,20 @@ print(sort_array([5, 8, 6, 3, 4]))
 def sort_array_2(source_array):
     odd_numbers = sorted(item for item in source_array if item % 2)
     return [even if even % 2 == 0 else odd_numbers.pop(0) for even in source_array]
+
+
+def well(x):
+    return 'Fail!' if x.count('good') == 0 else 'Publish!' if x.count('good') <= 2 else 'I smell a series!'
+
+
+def well_2(x):
+    if x.count('good') == 0:
+        return 'Fail!'
+    elif x.count('good') <= 2:
+        return 'Publish!'
+    else:
+        return 'I smell a series!'
+
+
+def cube_checker(volume, side):
+    return abs(volume ** (1 / 3) - side) < 1e-10 if volume > 0 and side > 0 else False
