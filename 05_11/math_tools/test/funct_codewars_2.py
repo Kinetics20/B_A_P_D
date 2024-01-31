@@ -658,5 +658,14 @@ def how_much_i_love_you(nb_petals):
 
     return phrases[index]
 
+
 def find_multiples(integer, limit):
     return [num for num in range(integer, limit + 1) if not num % integer]
+
+
+def count_squares(cuts):
+    return (cuts + 1) ** 3 - (cuts - 1) ** 3
+
+
+def count_squares_1(x):
+    return 6 * x ** 2 + 2
