@@ -657,3 +657,6 @@ def how_much_i_love_you(nb_petals):
     index = (nb_petals - 1) % len(phrases)
 
     return phrases[index]
+
+def find_multiples(integer, limit):
+    return [num for num in range(integer, limit + 1) if not num % integer]
