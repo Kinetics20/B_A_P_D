@@ -669,3 +669,15 @@ def count_squares(cuts):
 
 def count_squares_1(x):
     return 6 * x ** 2 + 2
+
+
+def sort_array(source_array):
+    return sorted(item for item in source_array if item % 2)
+
+
+print(sort_array([5, 8, 6, 3, 4]))
+
+
+def sort_array_2(source_array):
+    odd_numbers = sorted(item for item in source_array if item % 2)
+    return [even if even % 2 == 0 else odd_numbers.pop(0) for even in source_array]
