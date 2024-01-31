@@ -646,7 +646,14 @@ def grow_1(arr):
         product *= i
     return product
 
+
 def powers_of_two(n):
     return [2 ** num for num in range(0, n + 1)]
 
 
+def how_much_i_love_you(nb_petals):
+    phrases = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
+
+    index = (nb_petals - 1) % len(phrases)
+
+    return phrases[index]
