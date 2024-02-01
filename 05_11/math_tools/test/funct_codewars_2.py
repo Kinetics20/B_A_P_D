@@ -720,5 +720,14 @@ def duplicate_encode(word):
     word = word.lower()
     return ''.join([')' if word.count(char) > 1 else '(' for char in word])
 
+
 def collinearity(x1, y1, x2, y2):
     return x1 * y2 == x2 * y1
+
+
+def validate_pin(pin):
+    return (len(pin) == 4 or len(pin) == 6) and pin.isdigit()
+
+
+def validate_pin_2(pin):
+    return len(pin) in [4, 6] and pin.isdigit()
