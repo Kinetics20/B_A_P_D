@@ -698,3 +698,19 @@ def well_2(x):
 
 def cube_checker(volume, side):
     return abs(volume ** (1 / 3) - side) < 1e-10 if volume > 0 and side > 0 else False
+
+
+def simple_multiplication(number):
+    return 8 * number if not number % 2 else 9 * number
+
+
+def rot13(message):
+    result = ''
+    for char in message:
+        if char.isalpha():
+            shift = 13 if char.islower() else -13
+            result += chr(
+                (ord(char) - ord('a' if char.islower() else 'A') + shift) % 26 + ord('a' if char.islower() else 'A'))
+        else:
+            result += char
+    return result
