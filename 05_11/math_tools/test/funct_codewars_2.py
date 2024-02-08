@@ -739,3 +739,125 @@ def set_alarm(employed, vacation):
 
 def string_to_array(s):
     return s.split() or ['']
+
+
+def string_to_array_2(string):
+    return string.split(" ")
+
+
+def switch_it_up(number):
+    numbers_dict = {
+        0: "Zero",
+        1: "One",
+        2: "Two",
+        3: "Three",
+        4: "Four",
+        5: "Five",
+        6: "Six",
+        7: "Seven",
+        8: "Eight",
+        9: "Nine"
+    }
+    if number in numbers_dict:
+        return numbers_dict[number]
+
+
+def switch_it_up_1(n):
+    return ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'][n]
+
+
+def switch_it_up_3(number):
+    dict = {
+        1: "One",
+        2: "Two",
+        3: "Three",
+        4: "Four",
+        5: "Five",
+        6: "Six",
+        7: "Seven",
+        8: "Eight",
+        9: "Nine",
+        0: "Zero"}
+
+    return dict.get(number)
+
+
+def domain_name(url):
+    url = url.split("//")[-1]
+
+    if url.startswith("www."):
+        url = url[4:]
+
+    url = url.split("/")[0]
+
+    if "." in url:
+        parts = url.split(".")
+        if len(parts) > 2:
+            if parts[-1] in ["com", "net", "org", "jp", "za", "uk"]:
+                url = parts[-3]
+            else:
+                url = parts[-2]
+        else:
+            url = parts[0]
+
+    return url
+
+
+def domain_name_1(url):
+    return url.split("//")[-1].split("www.")[-1].split(".")[0]
+
+
+def tribonacci_1(signature, n):
+    if n == 0:
+        return []
+    elif n <= len(signature):
+        return signature[:n]
+    else:
+        result = signature[:]
+        for i in range(n - len(signature)):
+            next_term = sum(result[-3:])
+            result.append(next_term)
+        return result
+
+
+def tribonacci(signature, n):
+    res = signature[:n]
+    for i in range(n - 3): res.append(sum(res[-3:]))
+    return res
+
+
+def printer_error(s):
+    error_count = sum(1 for char in s if char > 'm')
+    return f"{error_count}/{len(s)}"
+
+
+def invert(lst):
+    return [-x for x in lst]
+
+
+def define_suit(card):
+    if 'C' in card:
+        return 'clubs'
+    if 'D' in card:
+        return 'diamonds'
+    if 'H' in card:
+        return 'hearts'
+    if 'S' in card:
+        return 'spades'
+
+
+def define_suit_1(card):
+    d = {'C': 'clubs', 'S': 'spades', 'D': 'diamonds', 'H': 'hearts'}
+    return d[card[-1]]
+
+
+def define_suit_2(card):
+    return {'C': 'clubs', 'S': 'spades', 'D': 'diamonds', 'H': 'hearts'}[card[-1]]
+
+
+def ensure_question(s):
+    return s + '?' if not s.endswith('?') else s
+
+
+def ensure_question_2(s):
+    return s if s.endswith('?') else s + '?'
