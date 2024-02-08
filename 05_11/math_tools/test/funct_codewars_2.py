@@ -731,3 +731,11 @@ def validate_pin(pin):
 
 def validate_pin_2(pin):
     return len(pin) in [4, 6] and pin.isdigit()
+
+
+def set_alarm(employed, vacation):
+    return employed and not vacation
+
+
+def string_to_array(s):
+    return s.split() or ['']
