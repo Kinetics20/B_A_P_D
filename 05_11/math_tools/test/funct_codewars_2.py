@@ -888,3 +888,7 @@ def same_case(a, b):
         return 1
     else:
         return 0
+
+
+def same_case_1(a, b):
+    return a.isupper() == b.isupper() if a.isalpha() and b.isalpha() else -1
