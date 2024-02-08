@@ -865,3 +865,17 @@ def ensure_question_2(s):
 
 def ice_brick_volume(radius, bottle_length, rim_length):
     return (((2 * radius) ** 2) * (bottle_length - rim_length)) / 2
+
+
+def longest(a1, a2):
+    return ''.join(sorted(set(a1 + a2)))
+
+
+def count_smileys(arr):
+    return sum([1 for sign in arr if
+                len(sign) == 2 and sign[0] in (':', ';') and sign[1] in (')', 'D') or len(sign) == 3 and sign[0] in (
+                    ':', ';') and sign[1] in ('-', '~') and sign[2] in (')', 'D')])
+
+
+def duck_duck_goose(players, goose):
+    return players[(goose - 1) % len(players)].name
