@@ -861,3 +861,7 @@ def ensure_question(s):
 
 def ensure_question_2(s):
     return s if s.endswith('?') else s + '?'
+
+
+def ice_brick_volume(radius, bottle_length, rim_length):
+    return (((2 * radius) ** 2) * (bottle_length - rim_length)) / 2
