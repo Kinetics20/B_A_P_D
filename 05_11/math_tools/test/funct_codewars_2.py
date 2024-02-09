@@ -934,9 +934,10 @@ def take(arr, n):
 def usdcny(usd):
     return f"{round(usd * 6.75, 2)} Chinese Yuan"
 
+
 def usdcny(usd):
     return f"{round(usd * 6.75, 2):.2f} Chinese Yuan"
 
+
 def hello(name=""):
     return "Hello, World!" if not name else f'Hello, {name.capitalize()}!'
-
