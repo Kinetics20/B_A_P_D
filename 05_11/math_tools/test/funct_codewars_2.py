@@ -916,3 +916,27 @@ def sum_dig_pow_2(a, b):
 
 def sum_dig_pow_3(a, b):
     return [x for x in range(a, b + 1) if sum(int(d) ** i for i, d in enumerate(str(x), 1)) == x]
+
+
+def flick_switch(lst):
+    switch = True
+    return [switch := not switch if word == 'flick' else switch for word in lst]
+
+
+def multiply(n):
+    return n * 5 ** len(str(abs(n)))
+
+
+def take(arr, n):
+    return arr[:n]
+
+
+def usdcny(usd):
+    return f"{round(usd * 6.75, 2)} Chinese Yuan"
+
+def usdcny(usd):
+    return f"{round(usd * 6.75, 2):.2f} Chinese Yuan"
+
+def hello(name=""):
+    return "Hello, World!" if not name else f'Hello, {name.capitalize()}!'
+
