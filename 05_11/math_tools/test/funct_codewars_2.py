@@ -892,3 +892,14 @@ def same_case(a, b):
 
 def same_case_1(a, b):
     return a.isupper() == b.isupper() if a.isalpha() and b.isalpha() else -1
+
+
+def min_max(lst):
+    return [min(lst), max(lst)]
+
+def sum_dig_pow(a, b):
+    def is_eureka(num):
+        digits = [int(digit) for digit in str(num)]
+        return num == sum(digit ** (index + 1) for index, digit in enumerate(digits))
+
+    return sorted(num for num in range(a, b + 1) if is_eureka(num))
