@@ -983,3 +983,7 @@ def include(arr, item):
 
 def each_cons(lst, n):
     return [lst[i:i + n] for i in range(len(lst) - n + 1)]
+
+
+def merge_arrays(arr1, arr2):
+    return list(sorted(set(arr1 + arr2)))
