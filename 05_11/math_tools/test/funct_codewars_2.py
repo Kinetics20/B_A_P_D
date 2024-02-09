@@ -941,3 +941,45 @@ def usdcny(usd):
 
 def hello(name=""):
     return "Hello, World!" if not name else f'Hello, {name.capitalize()}!'
+
+
+def greet(language):
+    dictionary = {
+        "english": "Welcome",
+        "czech": "Vitejte",
+        "danish": "Velkomst",
+        "dutch": "Welkom",
+        "estonian": "Tere tulemast",
+        "finnish": "Tervetuloa",
+        "flemish": "Welgekomen",
+        "french": "Bienvenue",
+        "german": "Willkommen",
+        "irish": "Failte",
+        "italian": "Benvenuto",
+        "latvian": "Gaidits",
+        "lithuanian": "Laukiamas",
+        "polish": "Witamy",
+        "spanish": "Bienvenido",
+        "swedish": "Valkommen",
+        "welsh": "Croeso"
+    }
+    return dictionary.get(language, 'Welcome')
+
+
+def get_key(dictionary, value):
+    for key, val in dictionary.items():
+        if val == value:
+            return key
+    return None
+
+
+def get_key_1(dictionary, value):
+    return next((key for key, val in dictionary.items() if val == value), None)
+
+
+def include(arr, item):
+    return item in arr
+
+
+def each_cons(lst, n):
+    return [lst[i:i + n] for i in range(len(lst) - n + 1)]
