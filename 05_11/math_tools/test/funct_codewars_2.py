@@ -897,9 +897,22 @@ def same_case_1(a, b):
 def min_max(lst):
     return [min(lst), max(lst)]
 
+
 def sum_dig_pow(a, b):
     def is_eureka(num):
         digits = [int(digit) for digit in str(num)]
         return num == sum(digit ** (index + 1) for index, digit in enumerate(digits))
 
     return sorted(num for num in range(a, b + 1) if is_eureka(num))
+
+
+def dig_pow(n):
+    return sum(int(x) ** y for y, x in enumerate(str(n), 1))
+
+
+def sum_dig_pow_2(a, b):
+    return [x for x in range(a, b + 1) if x == dig_pow(x)]
+
+
+def sum_dig_pow_3(a, b):
+    return [x for x in range(a, b + 1) if sum(int(d) ** i for i, d in enumerate(str(x), 1)) == x]
