@@ -987,3 +987,24 @@ def each_cons(lst, n):
 
 def merge_arrays(arr1, arr2):
     return list(sorted(set(arr1 + arr2)))
+
+
+def mouth_size(animal):
+    return 'small' if animal.lower() == 'alligator' else 'wide'
+
+
+def is_digit(n):
+    return len(n) == 1 and n.isdigit() and int(n) in range(0, 10)
+
+
+def to_freud(sentence):
+    return '' if not sentence else ' '.join("sex" for item in sentence.split())
+
+
+def string_clean(s):
+    return ''.join(char for char in s if not char.isdigit())
+
+
+def pythagorean_triple(integers):
+    integers.sort()
+    return integers[0] ** 2 + integers[1] ** 2 == integers[2] ** 2
