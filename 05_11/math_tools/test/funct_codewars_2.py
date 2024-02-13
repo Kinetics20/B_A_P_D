@@ -1062,3 +1062,13 @@ def if_chuck_says_so():
 
 def quadratic(x1, x2):
     return (1, -(x1 + x2), x1 * x2)
+
+
+def integrate(coefficient, exponent):
+    new_coefficient = coefficient // (exponent + 1)
+    new_exponent = exponent + 1
+    return f"{new_coefficient}x^{new_exponent}"
+
+
+def integrate_2(coefficient, exponent):
+    return f'{coefficient // (exponent + 1)}x^{exponent + 1}'
