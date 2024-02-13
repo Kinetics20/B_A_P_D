@@ -1054,3 +1054,11 @@ class Ship:
     def is_worth_it(self):
         draft_after_crew = self.draft - (self.crew * 1.5)
         return draft_after_crew > 20
+
+
+def if_chuck_says_so():
+    return not True
+
+
+def quadratic(x1, x2):
+    return (1, -(x1 + x2), x1 * x2)
