@@ -1008,3 +1008,49 @@ def string_clean(s):
 def pythagorean_triple(integers):
     integers.sort()
     return integers[0] ** 2 + integers[1] ** 2 == integers[2] ** 2
+
+
+def two_sum(numbers, target):
+    num_indices = {}
+    for i, num in enumerate(numbers):
+        complement = target - num
+        if complement in num_indices:
+            return (num_indices[complement], i)
+        num_indices[num] = i
+
+
+def two_sum_2(nums, t):
+    for i, x in enumerate(nums):
+        for j, y in enumerate(nums):
+            if i != j and x + y == t:
+                return [i, j]
+
+
+def dir_reduc(arr):
+    opposite = {'NORTH': 'SOUTH', 'SOUTH': 'NORTH', 'EAST': 'WEST', 'WEST': 'EAST'}
+    stack = []
+    for direction in arr:
+        if stack and stack[-1] == opposite[direction]:
+            stack.pop()
+        else:
+            stack.append(direction)
+    return stack
+
+
+def sum_of_differences(arr):
+    return 0 if len(arr) <= 1 else sum(
+        sorted(arr, reverse=True)[i] - sorted(arr, reverse=True)[i + 1] for i in range(len(arr) - 1))
+
+
+def sum_of_differences_2(arr):
+    return max(arr) - min(arr) if arr else 0
+
+
+class Ship:
+    def __init__(self, draft, crew):
+        self.draft = draft
+        self.crew = crew
+
+    def is_worth_it(self):
+        draft_after_crew = self.draft - (self.crew * 1.5)
+        return draft_after_crew > 20
