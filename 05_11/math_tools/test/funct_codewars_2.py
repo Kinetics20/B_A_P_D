@@ -1072,3 +1072,62 @@ def integrate(coefficient, exponent):
 
 def integrate_2(coefficient, exponent):
     return f'{coefficient // (exponent + 1)}x^{exponent + 1}'
+
+
+def goals(*args):
+    return sum(args)
+
+
+def goals_2(*a):
+    return sum(a)
+
+
+def calculate_years(principal, interest, tax, desired):
+    years = 0
+    while principal < desired:
+        principal += principal * interest * (1 - tax)
+        years += 1
+    return years
+
+
+def who_is_paying(name):
+    return [name] if len(name) <= 2 else [name, name[0:2]]
+
+
+def whose_move(last_player, win):
+    return 'white' if last_player == 'black' and win == False else (
+        'white' if last_player == 'white' and win == True else 'black')
+
+
+def whoseMove_2(lastPlayer, win):
+    return lastPlayer if win else 'white' if lastPlayer == 'black' else 'black'
+
+
+def stringy(size):
+    return ''.join(['1' if not i % 2 else '0' for i in range(size)])
+
+
+def stringy_2(size):
+    return ('10' * size)[:size]
+
+
+def triple_trouble(str1, str2, str3):
+    return ''.join([str1[i] + str2[i] + str3[i] for i in range(len(str1))])
+
+
+def triple_trouble_2(one, two, three):
+    return ''.join(''.join(a) for a in zip(one, two, three))
+
+
+def validate_hello(greetings):
+    words = {"hello": "english", "ciao": "italian", "salut": "french", "hallo": "german", "hola": "spanish",
+             "ahoj": "czech republic", "czesc": "polish"}
+    return any(word in greetings.lower() for word in words)
+
+
+def validate_hello_2(greetings):
+    return any(x in greetings.lower() for x in ['hello', 'ciao', 'salut', 'hallo', 'hola', 'ahoj', 'czesc'])
+
+
+def symmetric_point(p, q):
+    return [2 * q[0] - p[0], 2 * q[1] - p[1]]
