@@ -1263,3 +1263,100 @@ def filter_list(l):
     return [item for item in l if isinstance(item, int)]
 
 
+import random
+
+log = []
+
+
+def roll_dice():
+    log.append("roll_dice")
+    return random.randint(1, 6)
+
+
+def move():
+    log.append("move")
+    print("Moving...")
+
+
+def combat():
+    log.append("combat")
+    print("Combat...")
+
+
+def get_coins():
+    log.append("get_coins")
+    print("Getting coins...")
+
+
+def buy_health():
+    log.append("buy_health")
+    print("Buying health...")
+
+
+def print_status():
+    log.append("print_status")
+    print("Printing status...")
+
+
+def do_turn():
+    roll_result = roll_dice()
+    move()
+    combat()
+    get_coins()
+    buy_health()
+    print_status()
+
+
+def do_turn_2():
+    roll_dice()
+    move()
+    combat()
+    get_coins()
+    buy_health()
+    print_status()
+
+
+def do_turn_3():
+    steps = [roll_dice, move, combat,
+             get_coins, buy_health, print_status]
+
+    for step in steps:
+        step()
+
+
+def move_1(position, roll):
+    return (roll * 2) + position
+
+
+def fake_bin(x):
+    result = ''
+    for num in x:
+        if int(num) >= 5:
+            result += '1'
+        else:
+            result += '0'
+    return result
+
+
+def fake_bin_2(x):
+    return ''.join(['1' if int(digit) >= 5 else '0' for digit in x])
+
+
+def is_divisible(n, x, y):
+    return n % x == 0 and n % y == 0
+
+
+def get_volume_of_cuboid(length, width, height):
+    return length * width * height
+
+
+def get_ascii(str):
+    return ord(str)
+
+
+from datetime import datetime, timedelta
+
+
+def period_is_late(last, today, cycle_length):
+    days_passed = (today - last).days
+    return days_passed > cycle_length
