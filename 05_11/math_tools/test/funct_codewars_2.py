@@ -1257,3 +1257,9 @@ import random
 class Ghost:
     def __init__(self):
         self.color = random.choice(["white", "yellow", "purple", "red"])
+
+
+def filter_list(l):
+    return [item for item in l if isinstance(item, int)]
+
+
