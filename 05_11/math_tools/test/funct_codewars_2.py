@@ -1213,3 +1213,47 @@ def people_with_age_drink_2(age):
     if age > 17: return 'drink beer'
     if age > 13: return 'drink coke'
     return 'drink toddy'
+
+
+def build_string(*args):
+    return "I like {}!".format(", ".join(args))
+
+
+def any_arrows(arrows):
+    for arrow in arrows:
+        if 'damaged' not in arrow or not arrow['damaged']:
+            return True
+    return False
+
+
+def any_arrows_2(arrows):
+    return any('damaged' not in arrow or not arrow['damaged'] for arrow in arrows)
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @property
+    def info(self):
+        return f'{self.name}s age is {self.age}'
+
+
+class Solution:
+    @staticmethod
+    def main(*args):
+        print("Hello World!")
+
+
+class Solution_2:
+    def main(self):
+        print('Hello World!')
+
+
+import random
+
+
+class Ghost:
+    def __init__(self):
+        self.color = random.choice(["white", "yellow", "purple", "red"])
