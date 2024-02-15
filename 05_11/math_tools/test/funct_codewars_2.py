@@ -1131,3 +1131,85 @@ def validate_hello_2(greetings):
 
 def symmetric_point(p, q):
     return [2 * q[0] - p[0], 2 * q[1] - p[1]]
+
+
+def is_palindrome(s):
+    return s.lower() == s.lower()[::-1]
+
+
+def count(s):
+    return {char: s.count(char) for char in s}
+
+
+def six_toast(num):
+    return abs(num - 6)
+
+
+from math import factorial
+
+
+def am_i_wilson(n):
+    return False if n <= 1 else (factorial(n - 1) + 1) % (n * n) == 0
+
+
+factorial_cache = {}
+
+
+def factorial_cached(n):
+    if n in factorial_cache:
+        return factorial_cache[n]
+    result = factorial(n)
+    factorial_cache[n] = result
+    return result
+
+
+def am_i_wilson_2(P):
+    if P <= 1:
+        return False
+    return (factorial_cached(P - 1) + 1) % (P * P) == 0
+
+
+from math import ceil
+
+
+def aspect_ratio(x: int, y: int):
+    return ceil(y * (16 / 9)), y
+
+
+def lowercase_count(strng):
+    return sum(1 for letter in strng if letter.islower())
+
+
+def lowercase_count_2(strng):
+    return sum(a.islower() for a in strng)
+
+
+def draw_stairs(n):
+    for i in range(n):
+        print(" " * i + "I")
+
+
+def draw_stairs_2(n):
+    return '\n'.join(' ' * i + 'I' for i in range(n))
+
+
+def derive(coefficient, exponent):
+    return f'{coefficient * exponent}x^{exponent - 1}'
+
+
+def people_with_age_drink(age):
+    if age < 14:
+        return "drink toddy"
+    if 14 <= age < 18:
+        return "drink coke"
+    if 18 <= age < 21:
+        return "drink beer"
+    else:
+        return "drink whisky"
+
+
+def people_with_age_drink_2(age):
+    if age > 20: return 'drink whisky'
+    if age > 17: return 'drink beer'
+    if age > 13: return 'drink coke'
+    return 'drink toddy'
