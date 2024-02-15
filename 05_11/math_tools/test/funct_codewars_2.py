@@ -1360,3 +1360,15 @@ from datetime import datetime, timedelta
 def period_is_late(last, today, cycle_length):
     days_passed = (today - last).days
     return days_passed > cycle_length
+
+
+def mango(quantity, price):
+    return (quantity - quantity // 3) * price
+
+
+def pillars(num_pill, dist, width):
+    return 0 if num_pill <= 1 else ((num_pill - 1) * dist * 100) + (num_pill - 2) * width
+
+
+def pillars_2(num_pill, dist, width):
+    return dist * 100 * (num_pill - 1) + width * (num_pill - 2) * (num_pill > 1)
