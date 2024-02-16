@@ -1372,3 +1372,78 @@ def pillars(num_pill, dist, width):
 
 def pillars_2(num_pill, dist, width):
     return dist * 100 * (num_pill - 1) + width * (num_pill - 2) * (num_pill > 1)
+
+
+def add_binary(a, b):
+    return str(bin(a + b))[2:]
+
+
+def add_binary_1(a, b):
+    return format(a + b, 'b')
+
+
+def first_non_consecutive(arr):
+    for i in range(len(arr) - 1):
+        if arr[i + 1] != arr[i] + 1:
+            return arr[i + 1]
+
+
+def check_alive(health):
+    return False if health <= 0 else True
+
+
+def check_alive_2(health):
+    return health > 0
+
+
+def two_sort(array):
+    return '***'.join(sorted(array)[0])
+
+
+def two_sort_2(lst):
+    return '***'.join(min(lst))
+
+
+def duty_free(price, discount, holiday_cost):
+    return holiday_cost // (price * discount / 100)
+
+
+def two_highest(arg1):
+    if not arg1:
+        return []
+    elif len(arg1) == 1:
+        return arg1
+    new_list = [max(arg1), max([x for x in arg1 if x < max(arg1)])]
+    return new_list if new_list[0] != new_list[1] else max(arg1)
+
+
+def two_highest_2(arg1):
+    return sorted(set(arg1), reverse=True)[:2]
+
+
+def chromosome_check(chromosome):
+    return "Congratulations! You're going to have a son." if 'Y' in chromosome else "Congratulations! You're going to have a daughter."
+
+
+def is_even(n):
+    return False if n % 2 or isinstance(n, float) else True
+
+
+def is_even_2(n):
+    return not n % 2 and not isinstance(n, float)
+
+
+def is_even_3(n):
+    return not n % 2
+
+
+def billboard(name, price=30):
+    cost = 0
+    for _ in range(len(name)):
+        cost += price
+    return cost
+
+
+def distinct(seq):
+    seen = set()
+    return [x for x in seq if not (x in seen or seen.add(x))]
