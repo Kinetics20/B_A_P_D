@@ -1455,3 +1455,31 @@ def find_short(s):
 
 def find_shortest_word(text):
     return min((len(item), item) for item in text.split())[1]
+
+
+def delete_nth(order, max_e):
+    result = []
+    counts = {}
+    for num in order:
+        if num not in counts:
+            counts[num] = 0
+        if counts[num] < max_e:
+            result.append(num)
+            counts[num] += 1
+    return result
+
+
+def array(s):
+    return None if not s or len(s.split(',')) <= 2 else ' '.join(num for num in s.split(',')[1:-1])
+
+
+def array_2(strng):
+    return ' '.join(strng.split(',')[1:-1]) or None
+
+
+def is_opposite(s1, s2):
+    return False if not s1 and not s2 else s1.swapcase() == s2
+
+
+def is_opposite_2(s1, s2):
+    return False if not (s1 or s2) else s1.swapcase() == s2
