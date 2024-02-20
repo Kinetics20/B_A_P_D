@@ -1483,3 +1483,35 @@ def is_opposite(s1, s2):
 
 def is_opposite_2(s1, s2):
     return False if not (s1 or s2) else s1.swapcase() == s2
+
+
+def is_valid_walk(walk):
+    if len(walk) != 10:
+        return False
+
+    north_south = 0
+    east_west = 0
+
+    for direction in walk:
+        if direction == 'n':
+            north_south += 1
+        elif direction == 's':
+            north_south -= 1
+        elif direction == 'e':
+            east_west += 1
+        elif direction == 'w':
+            east_west -= 1
+
+    return north_south == 0 and east_west == 0
+
+
+def isValidWalk(walk):
+    return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')
+
+
+def isValidWalk_2(walk):
+    if (walk.count('n') == walk.count('s') and
+            walk.count('e') == walk.count('w') and
+            len(walk) == 10):
+        return True
+    return False
