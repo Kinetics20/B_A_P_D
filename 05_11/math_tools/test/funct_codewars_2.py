@@ -1515,3 +1515,15 @@ def isValidWalk_2(walk):
             len(walk) == 10):
         return True
     return False
+
+
+def print_array(arr):
+    return ",".join([str(item) for item in arr])
+
+
+def greet_5(name):
+    return "Hello, my love!" if name == "Johnny" else f"Hello, {name}!"
+
+
+def solution(a, b):
+    return a + b + a if len(a) < len(b) else b + a + b
