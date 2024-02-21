@@ -1527,3 +1527,24 @@ def greet_5(name):
 
 def solution(a, b):
     return a + b + a if len(a) < len(b) else b + a + b
+
+
+def friend(x):
+    return [name for name in x if len(name) == 4]
+
+
+def job_matching(candidate, job):
+    return candidate['min_salary'] <= job['max_salary'] or (candidate['min_salary'] - 0.1 * candidate['min_salary']) <= \
+        job['max_salary']
+
+
+def match(candidate, job):
+    return candidate['min_salary'] * 0.9 <= job['max_salary']
+
+
+def solution_5(molar_mass1, molar_mass2, given_mass1, given_mass2, volume, temp):
+    return ((given_mass1 / molar_mass1 + given_mass2 / molar_mass2) * (temp + 273.15) * 0.082) / volume
+
+
+def split_and_merge(string_, separator):
+    return " ".join(separator.join(word) for word in string_.split(" "))
