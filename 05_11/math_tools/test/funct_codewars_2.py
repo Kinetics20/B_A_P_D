@@ -1636,3 +1636,117 @@ def get_char(c):
 
 def find_average(numbers):
     return 0 if not numbers else sum(numbers) / len(numbers)
+
+
+def high(x):
+    alphabet_dict = {
+        'a': 1,
+        'b': 2,
+        'c': 3,
+        'd': 4,
+        'e': 5,
+        'f': 6,
+        'g': 7,
+        'h': 8,
+        'i': 9,
+        'j': 10,
+        'k': 11,
+        'l': 12,
+        'm': 13,
+        'n': 14,
+        'o': 15,
+        'p': 16,
+        'q': 17,
+        'r': 18,
+        's': 19,
+        't': 20,
+        'u': 21,
+        'v': 22,
+        'w': 23,
+        'x': 24,
+        'y': 25,
+        'z': 26
+    }
+
+    return sum([alphabet_dict[letter] for letter in x if letter in alphabet_dict])
+
+
+def high_2(x):
+    alphabet_dict = {
+        'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10,
+        'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19,
+        't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
+    }
+
+    max_score = 0
+    highest_word = ''
+
+    words = x.split()
+    for word in words:
+        score = sum(alphabet_dict[letter] for letter in word)
+        if score > max_score:
+            max_score = score
+            highest_word = word
+
+    return highest_word
+
+
+def seats_in_theater(tot_cols, tot_rows, col, row):
+    return (tot_cols - (col - 1)) * (tot_rows - row)
+
+
+def final_grade(exam, projects):
+    if exam > 90 or projects > 10: return 100
+    if exam > 75 and projects >= 5: return 90
+    if exam > 50 and projects >= 2: return 75
+    return 0
+
+
+def problem(a):
+    return "Error" if isinstance(a, str) else (a * 50) + 6
+
+
+def problem_2(a):
+    try:
+        return a * 50 + 6
+    except TypeError:
+        return "Error"
+
+
+def xor(a, b):
+    return (a and not b) or (not a and b)
+
+
+def xor_2(a, b):
+    return a != b
+
+
+def plural(n):
+    return n != 1
+
+
+def get_real_floor(n):
+    if 0 < n < 13:
+        return n - 1
+    elif n <= 0:
+        return n
+    else:
+        return n - 2
+
+
+def get_real_floor_2(n):
+    if n <= 0: return n
+    if n < 13: return n - 1
+    if n > 13: return n - 2
+
+
+def multiple_of_index(arr):
+    return [arr[i] for i in range(len(arr)) if i == 0 or (i != 0 and arr[i] % i == 0)] if arr[0] == 0 else [arr[i] for i
+                                                                                                            in range(1,
+                                                                                                                     len(arr))
+                                                                                                            if arr[
+                                                                                                                i] % i == 0]
+
+
+def multiple_of_index_2(arr):
+    return [j for i, j in enumerate(arr) if (j == 0 and i == 0) or (i != 0 and j % i == 0)]
