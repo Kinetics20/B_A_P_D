@@ -1548,3 +1548,91 @@ def solution_5(molar_mass1, molar_mass2, given_mass1, given_mass2, volume, temp)
 
 def split_and_merge(string_, separator):
     return " ".join(separator.join(word) for word in string_.split(" "))
+
+
+import re
+
+
+def increment_string(s):
+    match = re.search(r'(\d+)$', s)
+
+    if match:
+        num = match.group()
+        num_len = len(num)
+        new_num = str(int(num) + 1)
+        new_num = new_num.zfill(num_len)
+        return s[:match.start()] + new_num
+    else:
+        return s + '1'
+
+
+def cookie(x):
+    return f'Who ate the last cookie? It was {"Zach" if type(x) is str else "Monica" if type(x) in [int, float] else "the dog"}!'
+
+
+def no_boring_zeros(n):
+    return 0 if not n else int(str(n).rstrip('0'))
+
+
+def no_boring_zeros_2(n):
+    try:
+        return int(str(n).rstrip('0'))
+    except ValueError:
+        return 0
+
+
+def area_or_perimeter(l, w):
+    return l * w if l == w else 2 * l + 2 * w
+
+
+def area_or_perimeter_2(l, w):
+    return l * w if l == w else (l + w) * 2
+
+
+def enough(cap, on, wait):
+    return 0 if cap - on >= wait else abs(cap - (on + wait))
+
+
+def enough_2(cap, on, wait):
+    return max(0, wait - (cap - on))
+
+
+def position(alphabet):
+    alphabet_dict = {
+        'a': 1,
+        'b': 2,
+        'c': 3,
+        'd': 4,
+        'e': 5,
+        'f': 6,
+        'g': 7,
+        'h': 8,
+        'i': 9,
+        'j': 10,
+        'k': 11,
+        'l': 12,
+        'm': 13,
+        'n': 14,
+        'o': 15,
+        'p': 16,
+        'q': 17,
+        'r': 18,
+        's': 19,
+        't': 20,
+        'u': 21,
+        'v': 22,
+        'w': 23,
+        'x': 24,
+        'y': 25,
+        'z': 26
+    }
+
+    return f'Position of alphabet: {alphabet_dict.get(alphabet)}'
+
+
+def get_char(c):
+    return chr(c)
+
+
+def find_average(numbers):
+    return 0 if not numbers else sum(numbers) / len(numbers)
