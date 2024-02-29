@@ -1750,3 +1750,34 @@ def multiple_of_index(arr):
 
 def multiple_of_index_2(arr):
     return [j for i, j in enumerate(arr) if (j == 0 and i == 0) or (i != 0 and j % i == 0)]
+
+
+def update_light(current):
+    return {"green": "yellow", "yellow": "red", "red": "green"}[current]
+
+
+def update_light_2(current):
+    light_order = {'red': 'green', 'yellow': 'red', 'green': 'yellow'}
+
+    return light_order[current]
+
+
+def sum_str(a, b):
+    return str(int(a or 0) + int(b or 0))
+
+
+def accum_1(s):
+    return '-'.join(c.upper() + c.lower() * i for i, c in enumerate(s))
+
+
+def accum(s):
+    result = ""
+    for i, char in enumerate(s):
+        result += char.upper() + char.lower() * i
+        if i < len(s) - 1:
+            result += "-"
+    return result
+
+
+def find(array, el):
+    return array.index(el) if el in array else 'Not found'
