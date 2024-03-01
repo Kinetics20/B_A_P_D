@@ -1838,3 +1838,7 @@ def century_2(year):
 
 def century(year):
     return (year + 99) // 100
+
+
+def no_space(x):
+    return x.replace(' ', '')
