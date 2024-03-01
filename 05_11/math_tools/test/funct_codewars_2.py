@@ -1800,3 +1800,41 @@ def encrypt(text, n):
     for i in range(n):
         text = text[1::2] + text[::2]
     return text
+
+
+def name_shuffler(str_):
+    return ' '.join(str_.split()[::-1])
+
+
+def expression_matter(a, b, c):
+    return max(
+        a * b * c,
+        a + b + c,
+        a * (b + c),
+        (a + b) * c,
+        a * b + c,
+        a + b * c
+    )
+
+
+def check_for_factor(base, factor):
+    return not (base % factor)
+
+
+def odd_count_2(n):
+    return n // 2
+
+
+def odd_count(n):
+    return len(range(1, n, 2))
+
+
+from math import ceil
+
+
+def century_2(year):
+    return ceil(year / 100)
+
+
+def century(year):
+    return (year + 99) // 100
