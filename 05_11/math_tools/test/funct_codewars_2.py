@@ -1842,3 +1842,15 @@ def century(year):
 
 def no_space(x):
     return x.replace(' ', '')
+
+
+def unusual_five():
+    return len('abcde')
+
+
+def nth_even(n):
+    return 2 * (n - 1)
+
+
+def mul_by_n(lst, n):
+    return [item * n for item in lst]
