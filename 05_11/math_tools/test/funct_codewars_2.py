@@ -1854,3 +1854,79 @@ def nth_even(n):
 
 def mul_by_n(lst, n):
     return [item * n for item in lst]
+
+
+def mix(s1, s2):
+    def count_letters(s):
+        counts = {}
+        for char in s:
+            if char.islower():
+                counts[char] = counts.get(char, 0) + 1
+        return counts
+
+    s1_counts = count_letters(s1)
+    s2_counts = count_letters(s2)
+
+    result = []
+
+    for char in set(s1_counts.keys()) | set(s2_counts.keys()):
+        s1_freq = s1_counts.get(char, 0)
+        s2_freq = s2_counts.get(char, 0)
+
+        if s1_freq > 1 or s2_freq > 1:
+            if s1_freq > s2_freq:
+                result.append(f"1:{char * s1_freq}")
+            elif s1_freq < s2_freq:
+                result.append(f"2:{char * s2_freq}")
+            else:
+                result.append(f"=:{char * s1_freq}")
+
+    result.sort(key=lambda x: (-len(x), x))
+
+    return '/'.join(result)
+
+
+def count_sheep(num):
+    sheep_count = ""
+    for i in range(1, num + 1):
+        sheep_count += f"{i} sheep..."
+    return sheep_count
+
+
+def count_sheep_2(num):
+    return ''.join(f"{i} sheep..." for i in range(1, num + 1)) if num > 0 else ''
+
+
+def how_much_water(water, load, clothes):
+    if clothes > 2 * load:
+        return 'Too much clothes'
+    elif clothes < load:
+        return 'Not enough clothes'
+    return round(water * 1.1 ** (clothes - load), 2)
+
+
+def how_much_water_2(l, x, n):
+    return "Too much clothes" if n > 2 * x else "Not enough clothes" if n < x else round(1.1 ** (n - x) * l, 2)
+
+
+def get_status(is_busy):
+    return {'status': 'busy'} if is_busy else {'status': 'available'}
+
+
+def get_status_2(is_busy): return {'status': ("busy" if is_busy else "available")}
+
+
+def bar_triang(point_a, point_b, point_c):
+    return [round((point_a[0] + point_b[0] + point_c[0]) / 3, 4), round((point_a[1] + point_b[1] + point_c[1]) / 3, 4)]
+
+
+def describe_age(a):
+    t = "You're a(n) "
+    return f"{t + 'kid'}" if a <= 12 else \
+        f"{t + 'teenager'}" if 13 <= a <= 17 else \
+            f"{t + 'adult'}" if 18 <= a <= 64 else \
+                f"{t + 'elderly'}"
+
+
+def describe_age_2(a):
+    return "You're a(n) " + ('kid' if a <= 12 else 'teenager' if a <= 17 else 'adult' if a <= 64 else 'elderly')
