@@ -1930,3 +1930,83 @@ def describe_age(a):
 
 def describe_age_2(a):
     return "You're a(n) " + ('kid' if a <= 12 else 'teenager' if a <= 17 else 'adult' if a <= 64 else 'elderly')
+
+
+def nb_dig(n, d):
+    count = 0
+    for k in range(n + 1):
+        square = k * k
+        square_str = str(square)
+        count += square_str.count(str(d))
+    return count
+
+
+from math import pow
+
+
+def number_to_pwr(number, p):
+    return pow(number, p)
+
+
+def number_to_pwr_2(number, p):
+    result = 1
+    for _ in range(p):
+        result *= number
+    return result
+
+
+class Hero:
+    def __init__(self, name='Hero'):
+        self.name = name
+        self.position = '00'
+        self.health = 100
+        self.damage = 5
+        self.experience = 0
+
+
+def create_array(n):
+    res = []
+    i = 1
+    while i <= n:
+        res += [i]
+        i += 1
+    return res
+
+
+geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+
+
+def goose_filter(birds):
+    return [item for item in birds if item not in geese]
+
+
+def subtract_sum(n):
+    fruits = {
+        1: 'kiwi', 2: 'pear', 3: 'kiwi', 4: 'banana', 5: 'melon',
+        6: 'banana', 7: 'melon', 8: 'pineapple', 9: 'apple', 10: 'pineapple',
+        11: 'cucumber', 12: 'pineapple', 13: 'cucumber', 14: 'orange',
+        15: 'grape', 16: 'orange', 17: 'grape', 18: 'apple', 19: 'grape',
+        20: 'cherry', 21: 'pear', 22: 'cherry', 23: 'pear', 24: 'kiwi',
+        25: 'banana', 26: 'kiwi', 27: 'apple', 28: 'melon', 29: 'banana',
+        30: 'melon', 31: 'pineapple', 32: 'melon', 33: 'pineapple',
+        34: 'cucumber', 35: 'orange', 36: 'apple', 37: 'orange', 38: 'grape',
+        39: 'orange', 40: 'grape', 41: 'cherry', 42: 'pear', 43: 'cherry',
+        44: 'pear', 45: 'apple', 46: 'pear', 47: 'kiwi', 48: 'banana',
+        49: 'kiwi', 50: 'banana', 51: 'melon', 52: 'pineapple', 53: 'melon',
+        54: 'apple', 55: 'cucumber', 56: 'pineapple', 57: 'cucumber',
+        58: 'orange', 59: 'cucumber', 60: 'orange', 61: 'grape', 62: 'cherry',
+        63: 'apple', 64: 'cherry', 65: 'pear', 66: 'cherry', 67: 'pear',
+        68: 'kiwi', 69: 'pear', 70: 'kiwi', 71: 'banana', 72: 'apple',
+        73: 'banana', 74: 'melon', 75: 'pineapple', 76: 'melon', 77: 'pineapple',
+        78: 'cucumber', 79: 'pineapple', 80: 'cucumber', 81: 'apple',
+        82: 'grape', 83: 'orange', 84: 'grape', 85: 'cherry', 86: 'grape',
+        87: 'cherry', 88: 'pear', 89: 'cherry', 90: 'apple', 91: 'kiwi',
+        92: 'banana', 93: 'kiwi', 94: 'banana', 95: 'melon', 96: 'banana',
+        97: 'melon', 98: 'pineapple', 99: 'apple', 100: 'pineapple'
+    }
+
+    while True:
+        sum_of_digits = sum(int(digit) for digit in str(n))
+        n -= sum_of_digits
+        if n in fruits:
+            return fruits[n]
