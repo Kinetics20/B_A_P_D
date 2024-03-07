@@ -2010,3 +2010,33 @@ def subtract_sum(n):
         n -= sum_of_digits
         if n in fruits:
             return fruits[n]
+
+
+# flatten_method
+def flatten_and_sort(array):
+    return sorted([element for row in array for element in row])
+
+
+def chunk_list(lst, chunk_size):
+    return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]
+
+
+def sale_hotdogs(n):
+    return n * 100 if n < 5 else 95 * n if n >= 5 and n < 10 else n * 90
+
+
+def old_young(age):
+    return "children" if age < 16 else "young man" if age < 50 else "old man"
+
+
+def sale_hotdogs_2(n):
+    return n * (100 if n < 5 else 95 if n < 10 else 90)
+
+
+def sale_hotdogs_3(n):
+    return n * [90, 95, 100][(n < 10) + (n < 5)]
+
+
+class Ball:
+    def __init__(self, ball_type="regular"):
+        self.ball_type = ball_type
