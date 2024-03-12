@@ -2044,3 +2044,31 @@ class Ball:
 
 def zero_fuel(distance_to_pump, mpg, fuel_left):
     return mpg * fuel_left >= distance_to_pump
+
+
+def sum_digits(number):
+    return sum(int(unit) for unit in str(abs(number)))
+
+
+def get_age(age):
+    return int(age[0])
+
+
+def apple(x):
+    return "It's hotter than the sun!!" if int(
+        x) ** 2 > 1000 else "Help yourself to a honeycomb Yorkie for the glovebox."
+
+
+def is_vow(inp):
+    return [chr(num) if chr(num).lower() in {'a', 'e', 'i', 'o', 'u'} else num for num in inp]
+
+
+def replace_with_vowels(array):
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    result = []
+    for num in array:
+        if chr(num).lower() in vowels:
+            result.append(chr(num))
+        else:
+            result.append(num)
+    return result
