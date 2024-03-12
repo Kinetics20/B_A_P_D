@@ -2072,3 +2072,11 @@ def replace_with_vowels(array):
         else:
             result.append(num)
     return result
+
+
+def round_to_next5(n):
+    return n if n % 5 == 0 else ((n + 4) // 5) * 5
+
+
+def round_to_next5_2(n):
+    return n + (5 - n) % 5
