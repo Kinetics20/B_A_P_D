@@ -2080,3 +2080,90 @@ def round_to_next5(n):
 
 def round_to_next5_2(n):
     return n + (5 - n) % 5
+
+
+def factorial_2(n):
+    if n == 0:
+        return 1
+    else:
+        score = 1
+        for i in range(1, n + 1):
+            score *= i
+        return score
+
+
+import math
+
+
+def factorial_1(n):
+    return math.factorial(n)
+
+
+def first(seq, n=1):
+    return [] if n == 0 else seq[:n]
+
+
+def first_2(seq, n=1):
+    return seq[:n]
+
+
+def whatday(num):
+    days_of_week = {
+        2: "Monday",
+        3: "Tuesday",
+        4: "Wednesday",
+        5: "Thursday",
+        6: "Friday",
+        7: "Saturday",
+        1: "Sunday"
+    }
+
+    if num in (1, 2, 3, 4, 5, 6, 7):
+        return days_of_week[num]
+    return 'Wrong, please enter a number between 1 and 7'
+
+
+def whatday_2(num):
+    switcher = {
+        1: 'Sunday',
+        2: 'Monday',
+        3: 'Tuesday',
+        4: 'Wednesday',
+        5: 'Thursday',
+        6: 'Friday',
+        7: 'Saturday'
+    }
+    return switcher.get(num, 'Wrong, please enter a number between 1 and 7')
+
+
+from math import pi
+
+
+def square_area(A):
+    return round((2 * A / pi) ** 2, 2)
+
+
+def weather_info(temp):
+    c_t = (temp - 32) * (5 / 9)
+    if c_t > 0:
+        return f"{c_t} is above freezing temperature"
+    else:
+        return f"{c_t} is freezing temperature"
+
+
+def multi_table(number):
+    table = ""
+    for i in range(1, 11):
+        result = i * number
+        table += f"{i} * {number} = {result}"
+        if i != 10:
+            table += "\n"
+    return table
+
+
+def multi_table_2(number):
+    return '\n'.join(f'{i} * {number} = {i * number}' for i in range(1, 11))
+
+
+def to_binary(n):
+    return int(bin(n)[2:])
