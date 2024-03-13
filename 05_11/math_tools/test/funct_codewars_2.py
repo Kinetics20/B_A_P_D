@@ -2167,3 +2167,70 @@ def multi_table_2(number):
 
 def to_binary(n):
     return int(bin(n)[2:])
+
+
+def small_enough(array, limit):
+    return all(item <= limit for item in array)
+
+
+def small_enough_2(array, limit):
+    return max(array) <= limit
+
+
+def capitalize(s):
+    even_chars = ''.join(char.upper() if index % 2 == 0 else char for index, char in enumerate(s))
+    odd_chars = ''.join(char.upper() if index % 2 != 0 else char for index, char in enumerate(s))
+    return [even_chars, odd_chars]
+
+
+def capitalize_2(s):
+    result = ['', '']
+    for i, c in enumerate(s):
+        result[0] += c.lower() if i % 2 else c.upper()
+        result[1] += c.upper() if i % 2 else c.lower()
+    return result
+
+
+def capitalize_3(s):
+    s = ''.join(c if i % 2 else c.upper() for i, c in enumerate(s))
+    return [s, s.swapcase()]
+
+
+def eval_object(v):
+    if "operation" in v:
+        operation = v["operation"]
+        if operation == "+":
+            return v["a"] + v["b"]
+        elif operation == "-":
+            return v["a"] - v["b"]
+        elif operation == "/":
+            return v["a"] / v["b"]
+        elif operation == "*":
+            return v["a"] * v["b"]
+        elif operation == "%":
+            return v["a"] % v["b"]
+        elif operation == "**":
+            return v["a"] ** v["b"]
+    return 1
+
+
+def get_grade(s1, s2, s3):
+    score = (s1 + s2 + s3) / 3
+
+    if 90 <= score <= 100:
+        return 'A'
+    elif 80 <= score < 90:
+        return 'B'
+    elif 70 <= score < 80:
+        return 'C'
+    elif 60 <= score < 70:
+        return 'D'
+    return 'F'
+
+
+def greet_1(name, owner):
+    return 'Hello boss' if name == owner else 'Hello guest'
+
+
+def rental_car_cost(d):
+    return -50 + d * 40 if d >= 7 else (40 if d == 1 else -20 + d * 40)
