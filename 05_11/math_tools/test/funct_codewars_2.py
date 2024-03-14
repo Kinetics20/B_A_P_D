@@ -2234,3 +2234,182 @@ def greet_1(name, owner):
 
 def rental_car_cost(d):
     return -50 + d * 40 if d >= 7 else (40 if d == 1 else -20 + d * 40)
+
+
+def no_odds(values):
+    return [item for item in values if not item % 2]
+
+
+def zero(op=None):
+    if op is None:
+        return 0
+    else:
+        return op(0)
+
+
+def one(op=None):
+    if op is None:
+        return 1
+    else:
+        return op(1)
+
+
+def two(op=None):
+    if op is None:
+        return 2
+    else:
+        return op(2)
+
+
+def three(op=None):
+    if op is None:
+        return 3
+    else:
+        return op(3)
+
+
+def four(op=None):
+    if op is None:
+        return 4
+    else:
+        return op(4)
+
+
+def five(op=None):
+    if op is None:
+        return 5
+    else:
+        return op(5)
+
+
+def six(op=None):
+    if op is None:
+        return 6
+    else:
+        return op(6)
+
+
+def seven(op=None):
+    if op is None:
+        return 7
+    else:
+        return op(7)
+
+
+def eight(op=None):
+    if op is None:
+        return 8
+    else:
+        return op(8)
+
+
+def nine(op=None):
+    if op is None:
+        return 9
+    else:
+        return op(9)
+
+
+def plus(x):
+    return lambda y: y + x
+
+
+def minus(x):
+    return lambda y: y - x
+
+
+def times(x):
+    return lambda y: y * x
+
+
+def divided_by(x):
+    return lambda y: y // x
+
+
+def identity_1(a): return a
+
+
+def zero_1(f=identity_1): return f(0)
+
+
+def one_1(f=identity_1): return f(1)
+
+
+def two_1(f=identity_1): return f(2)
+
+
+def three_1(f=identity_1): return f(3)
+
+
+def four_1(f=identity_1): return f(4)
+
+
+def five_1(f=identity_1): return f(5)
+
+
+def six_1(f=identity_1): return f(6)
+
+
+def seven_1(f=identity_1): return f(7)
+
+
+def eight_1(f=identity_1): return f(8)
+
+
+def nine_1(f=identity_1): return f(9)
+
+
+def plus_1(b): return lambda a: a + b
+
+
+def minus_1(b): return lambda a: a - b
+
+
+def times_1(b): return lambda a: a * b
+
+
+def divided_by_1(b): return lambda a: a // b
+
+
+def bonus_time(salary, bonus):
+    return f'${salary * 10}' if bonus else f'${salary}'
+
+
+def bonus_time_2(salary, bonus):
+    return f"${salary * 10 if bonus else salary}"
+
+
+def type_validation(variable, _type):
+    return type(variable).__name__ == _type
+
+
+def playerRankUp(pts):
+    return "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up." if pts >= 100 else False
+
+
+from datetime import datetime
+
+
+def is_today(date):
+    return datetime.today().date() == date.date()
+
+
+def kata_13_december(lst):
+    new_l = []
+
+    for i in lst:
+        if i % 2:
+            new_l.append(i)
+    return new_l
+
+
+def kata_13_december_2(lst):
+    return [item for item in lst if item & 1]
+
+
+def fillable_2(stock, merch, n):
+    return merch in stock and stock[merch] >= n
+
+
+def fillable_3(stock, merch, n):
+    return stock.get(merch, 0) >= n
