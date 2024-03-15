@@ -2463,3 +2463,39 @@ def approx_equals(a, b):
 
 def parse_float(string):
     return None if any(c.isalpha() for c in string) else float(string)
+
+
+def find_even_index(arr):
+    n = len(arr)
+    left_sum = [0] * n
+    right_sum = [0] * n
+
+    left_sum[0] = arr[0]
+    for i in range(1, n):
+        left_sum[i] = left_sum[i - 1] + arr[i]
+
+    right_sum[n - 1] = arr[n - 1]
+    for i in range(n - 2, -1, -1):
+        right_sum[i] = right_sum[i + 1] + arr[i]
+
+    for i in range(n):
+        if left_sum[i] == right_sum[i]:
+            return i
+
+    return -1
+
+
+def find_even_index_1(arr):
+    for i in range(len(arr)):
+        if sum(arr[:i]) == sum(arr[i + 1:]):
+            return i
+    return -1
+
+
+def find_equilibrium_index(arr):
+    n = len(arr)
+
+    for i in range(n):
+        if sum(arr[:i]) == sum(arr[i + 1:]) and not (sum(arr[:i]) & 1):
+            return i
+    return -1
