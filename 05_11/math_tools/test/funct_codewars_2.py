@@ -2413,3 +2413,53 @@ def fillable_2(stock, merch, n):
 
 def fillable_3(stock, merch, n):
     return stock.get(merch, 0) >= n
+
+
+def factorial(n):
+    if n < 0 or n > 12:
+        raise ValueError
+    return 1 if n <= 1 else n * factorial(n - 1)
+
+
+def row_sum_odd_numbers(n):
+    start_number = (n - 1) * n + 1
+
+    row_sum = sum(range(start_number, start_number + 2 * n, 2))
+
+    return row_sum
+
+
+def row_sum_odd_numbers_1(n):
+    return n ** 3
+
+
+def uefa_euro_2016(teams, scores):
+    if scores[0] == scores[1]:
+        return f'At match {teams[0]} - {teams[1]}, teams played draw.'
+    elif scores[1] > scores[0]:
+        return f'At match {teams[0]} - {teams[1]}, {teams[1]} won!'
+    return f'At match {teams[0]} - {teams[1]}, {teams[0]} won!'
+
+
+def next_id(arr):
+    used_ids = set(arr)
+    next_id = 0
+    while next_id in used_ids:
+        next_id += 1
+
+    return next_id
+
+
+def odds(arr):
+    return [item for item in arr if item & 1]
+
+
+odds_list = lambda arr: [odd for odd in arr if odd % 2]
+
+
+def approx_equals(a, b):
+    return abs(a - b) <= 0.001
+
+
+def parse_float(string):
+    return None if any(c.isalpha() for c in string) else float(string)
