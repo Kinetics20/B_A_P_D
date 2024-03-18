@@ -2499,3 +2499,50 @@ def find_equilibrium_index(arr):
         if sum(arr[:i]) == sum(arr[i + 1:]) and not (sum(arr[:i]) & 1):
             return i
     return -1
+
+
+def solution_4(nums):
+    return [] if not nums else sorted(nums)
+
+
+def solut_5(nums):
+    return sorted(nums or [])
+
+
+def capitals(word):
+    return [index for index, char in enumerate(word) if char.isupper()]
+
+
+def uppercase_letters(s):
+    return [char for index, char in enumerate(s) if char.isupper()]
+
+
+def uppercase_letters_2(s):
+    return [char for char in s if char.isupper()]
+
+
+def check_uppercase_letters(s):
+    return any(char.isupper() for char in s)
+
+
+def isValid(formula):
+    if (1 in formula and 2 in formula) or (3 in formula and 4 in formula):
+        return False
+
+    if (5 in formula and 6 not in formula) or (6 in formula and 5 not in formula):
+        return False
+
+    if 7 not in formula and 8 not in formula:
+        return False
+
+    return True
+
+
+def next_item(sequence, item):
+    found = False
+    for i in sequence:
+        if found:
+            return i
+        if i == item:
+            found = True
+    return None
