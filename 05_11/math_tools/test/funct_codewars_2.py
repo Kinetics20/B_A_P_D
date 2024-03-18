@@ -2546,3 +2546,43 @@ def next_item(sequence, item):
         if i == item:
             found = True
     return None
+
+
+def gimme(input_array):
+    return input_array.index(sorted(input_array)[1])
+
+
+def round_it(n):
+    if '.' in str(n):
+        integer_part, decimal_part = str(n).split('.')
+
+        if len(integer_part) < len(decimal_part):
+            return math.ceil(n)
+        elif len(integer_part) > len(decimal_part):
+            return math.floor(n)
+        return round(n)
+    else:
+        return int(n)
+
+
+def round_it_2(n):
+    left, right = (len(part) for part in str(n).split("."))
+    return ceil(n) if left < right else int(n) if left > right else round(n)
+
+
+def spacey(array):
+    string = ''
+    return [string := string + item for item in array]
+
+
+def spacey_2(array):
+    result = []
+    string = ''
+    for item in array:
+        string += item
+        result.append(string)
+    return result
+
+
+def spacey_3(array):
+    return [''.join(array[:i + 1]) for i in range(len(array))]
