@@ -2586,3 +2586,60 @@ def spacey_2(array):
 
 def spacey_3(array):
     return [''.join(array[:i + 1]) for i in range(len(array))]
+
+
+def reverse_letter(st):
+    return ''.join([l for l in st if l.isalnum() and not l.isdigit()][::-1])
+    # return ''.join([l for l in n if l.isalpha() ][::-1])
+
+
+def meets_requirements(string):
+    has_lower = False
+    has_upper = False
+    has_digit = False
+    is_alnum = True
+
+    for char in string:
+        if char.islower():
+            has_lower = True
+        elif char.isupper():
+            has_upper = True
+        elif char.isdigit():
+            has_digit = True
+        elif not char.isalnum():
+            is_alnum = False
+
+    return has_lower and has_upper and has_digit and len(string) >= 6 and is_alnum
+
+
+# regex= r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$'
+
+regex = (
+    '^'  # start line
+    '(?=.*\d)'  # must contain one digit from 0-9
+    '(?=.*[a-z])'  # must contain one lowercase characters
+    '(?=.*[A-Z])'  # must contain one uppercase characters
+    '[a-zA-Z\d]'  # permitted characters (alphanumeric only)
+    '{6,}'  # length at least 6 chars
+    '$'  # end line
+)
+
+from math import gcd
+
+
+def mn_lcm(m, n):
+    def gcd(a, b):
+        while b:
+            a, b = b, a % b
+        return a
+
+    def lcm(a, b):
+        return a * b // gcd(a, b)
+
+    start = min(m, n)
+    end = max(m, n)
+
+    result = start
+    for i in range(start + 1, end + 1):
+        result = lcm(result, i)
+    return result
