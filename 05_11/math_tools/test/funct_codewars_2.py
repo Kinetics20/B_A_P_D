@@ -2643,3 +2643,27 @@ def mn_lcm(m, n):
     for i in range(start + 1, end + 1):
         result = lcm(result, i)
     return result
+
+
+def number_1_2(lines):
+    return [f'{index + 1}: {value}' for index, value in enumerate(lines)]
+
+
+def number_1_3(lines):
+    return ['%d: %s' % v for v in enumerate(lines, 1)]
+
+
+def number_1_4(lines):
+    return [f'{index}: {value}' for index, value in enumerate(lines, 1)]
+
+
+def find_next_square(sq):
+    root = sq ** 0.5
+    return -1 if (root - int(root)) != 0 else int((root + 1) ** 2)
+
+
+def find_next_square_1(sq):
+    root = sq ** 0.5
+    if root.is_integer():
+        return (root + 1) ** 2
+    return -1
