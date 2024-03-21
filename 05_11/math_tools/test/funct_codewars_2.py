@@ -2667,3 +2667,11 @@ def find_next_square_1(sq):
     if root.is_integer():
         return (root + 1) ** 2
     return -1
+
+
+def odd_or_even(arr):
+    return [0] if not arr else ('odd' if sum(arr) & 1 else 'even')
+
+
+def odd_or_even_1_2(arr):
+    return 'odd' if sum(arr) & 1 else 'even'
