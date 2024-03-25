@@ -2675,3 +2675,127 @@ def odd_or_even(arr):
 
 def odd_or_even_1_2(arr):
     return 'odd' if sum(arr) & 1 else 'even'
+
+
+def thirt(n):
+    seq = [1, 10, 9, 12, 3, 4]
+
+    result = n
+    sum_of_products = 0
+    index = 0
+
+    while True:
+        digits = [int(d) for d in str(result)]
+
+        for i in range(len(digits) - 1, -1, -1):
+            sum_of_products += digits[i] * seq[index]
+            index = (index + 1) % len(seq)
+
+        if result == sum_of_products:
+            return result
+        else:
+            result = sum_of_products
+            sum_of_products = 0
+            index = 0
+
+
+def can_i_play(now_hour, start_hour, end_hour):
+    if start_hour <= end_hour:
+        return start_hour <= now_hour < end_hour
+    else:
+        return now_hour >= start_hour or now_hour < end_hour
+
+
+class PokeScan:
+    def __init__(self, name, level, pkmntype):
+        self.name = name
+        self.level = level
+        self.pkmntype = pkmntype
+
+    def info(self):
+        if self.level <= 20:
+            level_observation = "weak"
+        elif 20 < self.level <= 50:
+            level_observation = "fair"
+        else:
+            level_observation = "strong"
+
+        if self.pkmntype == "water":
+            type_observation = "wet"
+        elif self.pkmntype == "fire":
+            type_observation = "fiery"
+        elif self.pkmntype == "grass":
+            type_observation = "grassy"
+        else:
+            type_observation = "unknown"
+
+        return f"{self.name}, a {type_observation} and {level_observation} Pokemon."
+
+
+def is_it_letter(s):
+    return s.isalpha()
+
+
+import datetime
+
+
+def week_start_date(dt):
+    days_difference = dt.weekday()
+
+    start_of_week = dt - datetime.timedelta(days=days_difference)
+
+    return start_of_week
+
+
+def week_end_date(dt):
+    days_difference = 6 - dt.weekday()
+
+    end_of_week = dt + datetime.timedelta(days=days_difference)
+
+    return end_of_week
+
+
+def tacofy(word):
+    taco = ['shell']
+    for letter in word.lower():
+        if letter in 'aeiou':
+            taco.append('beef')
+        elif letter == 't':
+            taco.append('tomato')
+        elif letter == 'l':
+            taco.append('lettuce')
+        elif letter == 'c':
+            taco.append('cheese')
+        elif letter == 'g':
+            taco.append('guacamole')
+        elif letter == 's':
+            taco.append('salsa')
+    taco.append('shell')
+    return taco
+
+
+def tacofy_2(word):
+    ingred = {
+        'a': 'beef', 'u': 'beef', 'i': 'beef', 'o': 'beef', 'e': 'beef',
+        't': 'tomato', 'c': 'cheese', 'l': 'lettuce', 'g': 'guacamole', 's': 'salsa'
+    }
+    return ['shell'] + [ingred[c] for c in word.lower() if c in ingred] + ['shell']
+
+
+import re
+
+TACODICT = {
+    't': 'tomato',
+    'l': 'lettuce',
+    'c': 'cheese',
+    'g': 'guacamole',
+    's': 'salsa'
+}
+
+
+def tacofy_3(word):
+    return ['shell'] + [TACODICT.get(c, 'beef') for c in re.sub('[^aeioutlcgs]+', '', word.lower())] + ['shell']
+
+
+def corrections(x):
+    return f'{x} is more than zero.' if x > 0 else f'{x} is equal to or less than zero.'
