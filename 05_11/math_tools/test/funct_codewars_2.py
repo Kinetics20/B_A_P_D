@@ -2799,3 +2799,31 @@ def tacofy_3(word):
 
 def corrections(x):
     return f'{x} is more than zero.' if x > 0 else f'{x} is equal to or less than zero.'
+
+
+def sort_by_length(arr):
+    return sorted(arr, key=len)
+
+
+def sort_by_letter(arr):
+    return sorted(arr, key=str.lower)
+
+
+# print(sort_by_letter(["a", "of", "dog", "food"]))
+
+def adjacent_element_product(array):
+    max_product = float('-inf')
+
+    for i in range(len(array) - 1):
+        product = array[i] * array[i + 1]
+        max_product = max(max_product, product)
+    return max_product
+
+
+def adjacent_element_product_2(array):
+    return max(array[i] * array[i + 1] for i in range(len(array) - 1))
+
+
+def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
+    sum_s_age = age_1 ** 2 + age_2 ** 2 + age_3 ** 2 + age_4 ** 2 + age_5 ** 2 + age_6 ** 2 + age_7 ** 2 + age_8 ** 2
+    return sum_s_age ** 0.5 // 2
