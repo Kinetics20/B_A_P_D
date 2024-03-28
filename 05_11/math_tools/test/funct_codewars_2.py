@@ -2831,3 +2831,32 @@ def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
 
 def predict_age_1(*ages):
     return sum(a * a for a in ages) ** .5 // 2
+
+
+def solve(s):
+    upper_count = sum(1 for l in s if l.isupper())
+    lower_count = sum(1 for l in s if l.islower())
+    return s.lower() if lower_count >= upper_count else s.upper()
+
+
+def show_sequence(n):
+    if not n:
+        return f'0={n}'
+    elif n < 0:
+        return f'{n}<0'
+    return '+'.join([str(i) for i in range(n + 1)]) + f' = {sum(range(n + 1))}'
+
+
+def find_longest(arr):
+    max_length = 0
+    max_number = None
+    for num in arr:
+        length = len(str(num))
+        if length > max_length:
+            max_length = length
+            max_number = num
+    return max_number
+
+
+def find_longest_1(arr):
+    return max(arr, key=lambda x: len(str(x)))
