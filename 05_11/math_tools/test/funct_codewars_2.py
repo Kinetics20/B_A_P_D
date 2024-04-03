@@ -2900,3 +2900,16 @@ def words_to_marks_2(s):
 
 def sum_cubes(n):
     return sum(n ** 3 for n in range(n + 1))
+
+
+def gps(s, x):
+    if len(x) <= 1:
+        return 0
+
+    max_speed = 0
+    for i in range(1, len(x)):
+        delta_distance = x[i] - x[i - 1]
+        speed = (3600 * delta_distance) / s
+        max_speed = max(max_speed, speed)
+
+    return int(max_speed)
