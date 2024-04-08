@@ -2913,3 +2913,11 @@ def gps(s, x):
         max_speed = max(max_speed, speed)
 
     return int(max_speed)
+
+from collections import Counter
+
+def highest_rank(arr):
+    counter = Counter(arr)
+    sorted_counter = sorted(counter.items(), key=lambda x: (-x[1], -x[0]))
+    return sorted_counter[0][0]
+
