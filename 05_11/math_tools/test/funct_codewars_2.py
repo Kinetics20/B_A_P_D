@@ -2931,3 +2931,17 @@ def highest_rank_2(arr):
     counter = Counter(arr)
     sorted_counter = sorted(counter.items(), key=lambda x: (-x[1], -x[0]))
     return sorted_counter[0][0]
+
+
+def remove_smallest(numbers):
+    if not numbers:
+        return []
+    min_index = numbers.index(min(numbers))
+    return numbers[:min_index] + numbers[min_index + 1:]
+
+
+def remove_smallest_2(numbers):
+    a = numbers[:]
+    if a:
+        a.remove(min(a))
+    return a
