@@ -2945,3 +2945,7 @@ def remove_smallest_2(numbers):
     if a:
         a.remove(min(a))
     return a
+
+
+def spacify(string):
+    return ' '.join(string)
