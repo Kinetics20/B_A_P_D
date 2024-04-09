@@ -2949,3 +2949,39 @@ def remove_smallest_2(numbers):
 
 def spacify(string):
     return ' '.join(string)
+
+
+def sum_triangular_numbers(n):
+    total_sum = 0
+    for i in range(1, n + 1):
+        triangular_number = (i * (i + 1)) // 2
+        total_sum += triangular_number
+    return total_sum if n > 0 else 0
+
+
+def sum_triangular_numbers_1(n):
+    return n * (n + 1) * (n + 2) / 6 if n > 0 else 0
+
+
+def sum_triangular_numbers_2(n):
+    total, a = 0, 0
+    for i in range(n):
+        a += i + 1
+        total += a
+    return total
+
+
+def sum_triangular_numbers_3(n):
+    return 0 if n < 0 else n * (n + 1) * (n + 2) // 6
+
+
+def remove_url_anchor(url):
+    return url[:url.index('#')] if '#' in url else url
+
+
+def remove_url_anchor_2(url):
+    return url.split('#')[0]
+
+
+def remove_url_anchor_3(url):
+    return url.partition('#')[0]
