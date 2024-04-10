@@ -3015,3 +3015,23 @@ def declare_winner_1(fighter1, fighter2, first_attacker):
         opp.health -= cur.damage_per_attack
         cur, opp = opp, cur
     return opp.name
+
+
+def switcheroo(s):
+    return s.replace('a', '&').replace('b', 'a').replace('&', 'b')
+
+
+def switcheroo_2(s):
+    new_string = ""
+    for char in s:
+        if char == 'a':
+            new_string += 'b'
+        elif char == 'b':
+            new_string += 'a'
+        else:
+            new_string += char
+    return new_string
+
+
+def switcheroo_3(s):
+    return s.translate(str.maketrans('ab', 'ba'))
