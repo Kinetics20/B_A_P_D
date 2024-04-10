@@ -3035,3 +3035,18 @@ def switcheroo_2(s):
 
 def switcheroo_3(s):
     return s.translate(str.maketrans('ab', 'ba'))
+
+
+from math import pi
+
+
+def stereometry(r, h):
+    return (
+        round(4 * pi * (r ** 2), 3), round(pi * (r ** 2 - h ** 2), 3), round(2 * pi * ((r ** 2 - h ** 2) ** 0.5), 3))
+
+
+from math import pi, sqrt
+
+
+def stereometry_1(r, h):
+    return round(4 * pi * r ** 2, 3), round(pi * (radius := r ** 2 - h ** 2), 3), round(2 * pi * sqrt(radius), 3)
