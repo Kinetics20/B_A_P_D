@@ -3050,3 +3050,8 @@ from math import pi, sqrt
 
 def stereometry_1(r, h):
     return round(4 * pi * r ** 2, 3), round(pi * (radius := r ** 2 - h ** 2), 3), round(2 * pi * sqrt(radius), 3)
+
+
+def get_even_numbers(arr):
+    return [num for num in arr if not num & 1]
+# for even if not num & 1 , for odd if num & 1
