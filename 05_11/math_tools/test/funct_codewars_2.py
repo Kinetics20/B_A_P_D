@@ -3054,4 +3054,77 @@ def stereometry_1(r, h):
 
 def get_even_numbers(arr):
     return [num for num in arr if not num & 1]
+
+
 # for even if not num & 1 , for odd if num & 1
+
+def get_even_numbers_2(arr):
+    return list(filter(lambda x: not x % 2, arr))
+
+
+dict_1 = {
+    'a': '1',
+    'e': '2',
+    'i': '3',
+    'o': '4',
+    'u': '5'
+}
+
+
+def encode(s):
+    encoded_string = ''
+    for letter in s:
+        if letter in dict_1:
+            encoded_string += dict_1[letter]
+        else:
+            encoded_string += letter
+    return encoded_string
+
+
+def decode(s):
+    decoded_string = ''
+    for char in s:
+        if char in dict_1.values():
+            for letter, code in dict_1.items():
+                if code == char:
+                    decoded_string += letter
+                    break
+        else:
+            decoded_string += char
+    return decoded_string
+
+
+tbl1 = str.maketrans("aeiou", "12345")
+tbl2 = str.maketrans("12345", "aeiou")
+
+
+def encode_1(st):
+    return st.translate(tbl1)
+
+
+def decode_1(st):
+    return st.translate(tbl2)
+
+
+CIPHER = ("aeiou", "12345")
+
+
+def encode_2(st):
+    return st.translate(str.maketrans(CIPHER[0], CIPHER[1]))
+
+
+def decode_3(st):
+    return st.translate(str.maketrans(CIPHER[1], CIPHER[0]))
+
+
+def diamond(n):
+    if n % 2 == 0 or n < 1:
+        return None
+
+    diamond_str = ""
+    for i in range(n):
+        spaces = abs(n // 2 - i)
+        diamonds = n - 2 * spaces
+        diamond_str += " " * spaces + "*" * diamonds + "\n"
+
+    return diamond_str
