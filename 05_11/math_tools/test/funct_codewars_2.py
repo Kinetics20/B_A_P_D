@@ -3140,3 +3140,6 @@ def divisors(n):
 
 def divisors_2(n):
     return sum(n % i == 0 for i in range(1, n + 1))
+
+def divisors_3(n):
+    return sum(not n % i for i in range(1, n + 1))
