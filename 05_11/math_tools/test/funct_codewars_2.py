@@ -3129,10 +3129,14 @@ def diamond(n):
 
     return diamond_str
 
+
 def divisors(n):
     divisors_count = 0
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
         if n % i == 0:
             divisors_count += 1
     return divisors_count
 
+
+def divisors_2(n):
+    return sum(n % i == 0 for i in range(1, n + 1))
