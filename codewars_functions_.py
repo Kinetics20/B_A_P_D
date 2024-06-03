@@ -3149,4 +3149,8 @@ def divisors_3(n):
 def check_sum_list(l):
     return sum(l) if len(l) < 2 else sum(sorted(l)[-2:])
 
+
 # print(check_sum_list([-1, 5, 5, 6, 6, 11]))
+
+def without_last(lst):
+    return lst[:-1]
