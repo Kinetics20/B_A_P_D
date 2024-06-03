@@ -3141,5 +3141,12 @@ def divisors(n):
 def divisors_2(n):
     return sum(n % i == 0 for i in range(1, n + 1))
 
+
 def divisors_3(n):
     return sum(not n % i for i in range(1, n + 1))
+
+
+def check_sum_list(l):
+    return sum(l) if len(l) < 2 else sum(sorted(l)[-2:])
+
+# print(check_sum_list([-1, 5, 5, 6, 6, 11]))
