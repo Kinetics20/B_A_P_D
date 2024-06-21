@@ -3154,3 +3154,17 @@ def check_sum_list(l):
 
 def without_last(lst):
     return lst[:-1]
+
+
+def is_it_good_pass(password):
+    return True if len(password) >= 8 else False
+
+
+def find_longest_word(sentence):
+    words = sentence.split()
+    the_longest = max(words, key=len)
+    return the_longest
+
+
+def find_longest_word_2(sentence):
+    return max(sentence.split(), key=len)
