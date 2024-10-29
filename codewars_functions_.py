@@ -3169,5 +3169,5 @@ def find_longest_word(sentence):
 def find_longest_word_2(sentence):
     return max(sentence.split(), key=len)
 
-def solution(value):
+def solution_2(value):
     return f'Value is {str(value).zfill(5)}'
