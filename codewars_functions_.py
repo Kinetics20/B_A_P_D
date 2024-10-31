@@ -3171,3 +3171,10 @@ def find_longest_word_2(sentence):
 
 def solution_2(value):
     return f'Value is {str(value).zfill(5)}'
+
+def filter_string(st):
+    return int(''.join(x for x in st if x.isdigit()))
+
+def contain_all_rots(strng, arr):
+    return all(strng[i:] + strng[:i] in arr for i in range(len(strng)))
+
