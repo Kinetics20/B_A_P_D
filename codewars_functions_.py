@@ -3178,3 +3178,69 @@ def filter_string(st):
 def contain_all_rots(strng, arr):
     return all(strng[i:] + strng[:i] in arr for i in range(len(strng)))
 
+
+class Block:
+    def __init__(self, dimension):
+        self.width = dimension[0]
+        self.length = dimension[1]
+        self.height = dimension[2]
+
+    def get_width(self):
+        return self.width
+
+    def get_length(self):
+        return self.length
+
+    def get_height(self):
+        return self.height
+
+    def get_volume(self):
+        return self.width * self.length * self.height
+
+    def get_surface_area(self):
+        return 2 * (self.width * self.length + self.length * self.height + self.height * self.width)
+
+
+from operator import mul
+
+
+class Block_2(object):
+    def __init__(self, dimensions):
+        self.dimensions = dimensions
+
+    def get_width(self):
+        return self.dimensions[0]
+
+    def get_length(self):
+        return self.dimensions[1]
+
+    def get_height(self):
+        return self.dimensions[2]
+
+    def get_volume(self):
+        return reduce(mul, self.dimensions)
+
+    def get_surface_area(self):
+        w, l, h = self.dimensions
+        return 2 * (w * l + l * h + w * h)
+
+
+class Block_3(object):
+    def __init__(self, wlh):
+        self.w, self.l, self.h = w, l, h = wlh
+        self.v = w * h * l
+        self.a = 2 * (w * l + w * h + l * h)
+
+    def get_width(self):        return self.w
+
+    def get_length(self):       return self.l
+
+    def get_height(self):       return self.h
+
+    def get_volume(self):       return self.v
+
+    def get_surface_area(self): return self.a
+
+
+
+
