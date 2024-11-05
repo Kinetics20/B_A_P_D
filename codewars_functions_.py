@@ -3169,11 +3169,14 @@ def find_longest_word(sentence):
 def find_longest_word_2(sentence):
     return max(sentence.split(), key=len)
 
+
 def solution_2(value):
     return f'Value is {str(value).zfill(5)}'
 
+
 def filter_string(st):
     return int(''.join(x for x in st if x.isdigit()))
+
 
 def contain_all_rots(strng, arr):
     return all(strng[i:] + strng[:i] in arr for i in range(len(strng)))
@@ -3242,5 +3245,106 @@ class Block_3(object):
     def get_surface_area(self): return self.a
 
 
+def data_reverse(data):
+    byte_chunks = [data[i:i + 8] for i in range(0, len(data), 8)]
+
+    reversed_chunks = byte_chunks[::-1]
+
+    return [bit for chunk in reversed_chunks for bit in chunk]
 
 
+def data_reverse_2(data):
+    res = []
+
+    for i in range(len(data) - 8, -1, -8):
+        res.extend(data[i:i + 8])
+
+    return res
+
+
+def data_reverse_3(data):
+    return [b for a in xrange(len(data) - 8, -1, -8) for b in data[a:a + 8]]
+
+
+def generate_custom_dict():
+    alphabet = {i + 1: chr(122 - i) for i in range(26)}
+
+    special_chars = {27: '!', 28: '?', 29: ' '}
+
+    return {**alphabet, **special_chars}
+
+
+custom_dict = generate_custom_dict()
+
+
+def switcher(arr):
+    return ''.join([custom_dict[int(x)] for x in arr if int(x) in custom_dict])
+
+
+chars = "_zyxwvutsrqponmlkjihgfedcba!? "
+
+
+def switcher_2(arr):
+    return "".join(chars[int(i)] for i in arr if i != "0")
+
+
+def switcher_3(arr):
+    d = {str(i): chr(123 - i) for i in range(1, 27)}
+    d.update({'27': '!'})
+    d.update({'28': '?'})
+    d.update({'29': ' '})
+    d.update({'0': ''})
+    return ''.join([d[str(i)] for i in arr])
+
+
+def calc(x):
+    total1 = ''.join(str(ord(char)) for char in x)
+
+    total2 = total1.replace('7', '1')
+
+    sum_total1 = sum(int(digit) for digit in total1)
+    sum_total2 = sum(int(digit) for digit in total2)
+
+    return sum_total1 - sum_total2
+
+
+def calc_2(x):
+    return ''.join(str(ord(ch)) for ch in x).count('7') * 6
+
+
+def array_leaders(numbers):
+    leaders = []
+
+    for i in range(len(numbers)):
+        right_sum = sum(numbers[i + 1:])
+
+        if numbers[i] > right_sum:
+            leaders.append(numbers[i])
+    return leaders
+
+
+def array_leaders_2(numbers):
+    return [n for (i, n) in enumerate(numbers) if n > sum(numbers[(i + 1):])]
+
+
+def greet_45(name):
+    return f'Hello {name.lower().title()}!'
+
+
+import re
+
+
+def abbreviate(text):
+    def abbreviate_word(word):
+        if len(word) >= 4:
+            return f"{word[0]}{len(word) - 2}{word[-1]}"
+        return word
+
+    result = []
+    for part in re.split(r'([^a-zA-Z]+)', text):
+        if part.isalpha():
+            result.append(abbreviate_word(part))
+        else:
+            result.append(part)
+
+    return ''.join(result)
